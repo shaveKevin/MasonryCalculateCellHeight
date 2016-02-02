@@ -13,5 +13,6 @@
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *contentLabel;
 @property (nonatomic, strong) UILabel *line;
+@property (nonatomic, strong) UIImageView *iconImageView;
 - (void)customListBlindCell:(id)dataSource;
 @end

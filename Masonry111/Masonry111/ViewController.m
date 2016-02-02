@@ -57,8 +57,11 @@ static  NSString *const cellIdentifier = @"cell";
     [self.tempCell layoutIfNeeded];
     return [self.tempCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1 ;
 }
--(CustomListCell *)tempCell {
+//懒加载一个cell 用于计算高度(从重用池中取出)
+- (CustomListCell *)tempCell {
+    
     if (!_tempCell) {
+        
         _tempCell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     }
     return _tempCell;

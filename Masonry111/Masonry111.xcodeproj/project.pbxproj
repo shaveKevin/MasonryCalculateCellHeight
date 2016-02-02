@@ -15,6 +15,7 @@
 		2CAB06031C56822400175074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAB06021C56822400175074 /* Assets.xcassets */; };
 		2CAB06061C56822400175074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAB06041C56822400175074 /* LaunchScreen.storyboard */; };
 		2CAB062B1C57016800175074 /* CustomListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB062A1C57016800175074 /* CustomListCell.m */; };
+		2CDE60501C60BF1C00F9F1B4 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE604F1C60BF1C00F9F1B4 /* 11.png */; };
 		343A70B1F50F516157622ECF /* Pods_Masonry111.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11295CD10EB94DFF758ABF7 /* Pods_Masonry111.framework */; };
 		DC2B73009C720C6397DDF071 /* Pods_Masonry111UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7249BDE812AC7C6B1083AC /* Pods_Masonry111UITests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		2CAB06171C56822400175074 /* Masonry111UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry111UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAB06291C57016800175074 /* CustomListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomListCell.h; sourceTree = "<group>"; };
 		2CAB062A1C57016800175074 /* CustomListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomListCell.m; sourceTree = "<group>"; };
+		2CDE604F1C60BF1C00F9F1B4 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
 		43A06F5D39E393D77D227F20 /* Pods-Masonry111Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Masonry111Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Masonry111Tests/Pods-Masonry111Tests.release.xcconfig"; sourceTree = "<group>"; };
 		570A8C4189E6A52B71380705 /* Pods-Masonry111.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Masonry111.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Masonry111/Pods-Masonry111.debug.xcconfig"; sourceTree = "<group>"; };
 		6308FC3DB25BAB01B5219BEA /* Pods_Masonry111Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Masonry111Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				2CAB05FD1C56822400175074 /* ViewController.m */,
 				2CAB06291C57016800175074 /* CustomListCell.h */,
 				2CAB062A1C57016800175074 /* CustomListCell.m */,
+				2CDE604F1C60BF1C00F9F1B4 /* 11.png */,
 				2CAB05FF1C56822400175074 /* Main.storyboard */,
 				2CAB06021C56822400175074 /* Assets.xcassets */,
 				2CAB06041C56822400175074 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 				2CAB06061C56822400175074 /* LaunchScreen.storyboard in Resources */,
 				2CAB06031C56822400175074 /* Assets.xcassets in Resources */,
 				2CAB06011C56822400175074 /* Main.storyboard in Resources */,
+				2CDE60501C60BF1C00F9F1B4 /* 11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
