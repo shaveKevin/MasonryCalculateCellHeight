@@ -10,7 +10,13 @@
 #import "Masonry.h"
 @implementation CustomListCell
 
-
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        self.bounds = [UIScreen mainScreen].bounds;
+        
+    }
+    return self;
+}
 - (UILabel *)contentLabel {
     if (!_contentLabel) {
         _contentLabel = [UILabel new];
@@ -21,7 +27,7 @@
         [self.contentLabel  mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(5);
             make.top.equalTo(self.line.mas_bottom).offset(10);
-            make.right.mas_greaterThanOrEqualTo(-15);
+            make.right.mas_equalTo(-5);
             make.bottom.mas_equalTo(-20);
         }];
 
@@ -70,7 +76,7 @@
     [super layoutSubviews];
 }
 - (void)customListBlindCell:(id)dataSource {
-    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    //self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
     self.contentView.backgroundColor = [UIColor lightGrayColor];
     self.nameLabel.backgroundColor = [UIColor orangeColor];
     self.contentLabel.backgroundColor = [UIColor redColor];
