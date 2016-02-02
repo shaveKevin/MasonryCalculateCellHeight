@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *contentLabel;
-
+@property (nonatomic, strong) UILabel *line;
 - (void)customListBlindCell:(id)dataSource;
 @end
