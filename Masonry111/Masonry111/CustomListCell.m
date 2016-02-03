@@ -139,7 +139,10 @@ static CGFloat const kTempImageviewHeight = 100.0f;
             make.left.mas_equalTo(kDefaultPadding);
             make.right.mas_equalTo(kBottomMargin);
             //如果图片不固定高度的话会计算会根据图片本身高度来计算  如果想固定图片高度就把下面的高度注释打开就好了
-            // make.height.mas_equalTo(kTempImageviewHeight);
+            if ([self.dataSourceElement isEqualToString:@"1"]) {
+                //高度固定的时候处理约束
+                // make.height.mas_equalTo(kTempImageviewHeight);
+            }
              make.bottom.equalTo(self.contentView.mas_bottom).offset(kBottomMargin);
         }];
         _isFirstVisit = YES;
@@ -149,12 +152,12 @@ static CGFloat const kTempImageviewHeight = 100.0f;
         // 如果 iconimageView的高度是固定的。那么更改约束的话 不仅仅修改的是iconimageview 的约束
         
         [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-            
             make.top.equalTo(self.contentLabel.mas_bottom).offset(0);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
-
         }];
+        
+    }  else if ([self.dataSourceElement isEqualToString:@"1"]) {
+        //如果高度不固定的话处理
         
     }
     [super updateConstraints];
