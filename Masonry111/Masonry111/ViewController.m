@@ -43,8 +43,10 @@ static  NSString *const cellIdentifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     [cell customListBlindCell: _dataArray[indexPath.row]];
-    [self.tempCell setNeedsUpdateConstraints];
-    [self.tempCell layoutIfNeeded];
+    [cell setNeedsUpdateConstraints];
+    [cell updateConstraintsIfNeeded];
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -54,6 +56,8 @@ static  NSString *const cellIdentifier = @"cell";
     
     [self.tempCell customListBlindCell:_dataArray[indexPath.row]];
     [self.tempCell setNeedsUpdateConstraints];
+    [self.tempCell updateConstraintsIfNeeded];
+    [self.tempCell setNeedsLayout];
     [self.tempCell layoutIfNeeded];
     return [self.tempCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1 ;
 }
