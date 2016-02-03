@@ -30,7 +30,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
 @property (nonatomic, strong) UILabel *line;
 @property (nonatomic, strong) UIImageView *iconImageView;
 @property (nonatomic, assign) BOOL isFirstVisit;
-
+@property (nonatomic, assign) id  dataSourceElement;
 @end
 
 @implementation CustomListCell
@@ -97,11 +97,17 @@ static CGFloat const kTempImageviewHeight = 100.0f;
 
 - (void)customListBlindCell:(id)dataSource {
     
+    _dataSourceElement = dataSource;
     self.contentView.backgroundColor = [UIColor lightGrayColor];
     self.nameLabel.backgroundColor = [UIColor orangeColor];
     self.contentLabel.backgroundColor = [UIColor redColor];
-    self.iconImageView.image =  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"11" ofType:@"png"]];
-    //[UIImage imageNamed:@"11"];
+    
+    if (![dataSource  isEqualToString:@"2"]) {
+         self.iconImageView.image =  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"11" ofType:@"png"]];
+    }
+    else {
+        self.iconImageView.image = nil;
+    }
     self.nameLabel.text = dataSource;
     self.contentLabel.text = dataSource;
 }
@@ -110,11 +116,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
     
     //第一次进来的话走的是make  再次进来走的是update 或者 remake
     if (!_isFirstVisit) {
-        [self.contentLabel  mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(kLeftMargin);
-            make.top.equalTo(self.line.mas_bottom).offset(kLeftPadding);
-            make.right.mas_equalTo(kBottomMargin);
-        }];
+        
         
         [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(kLeftMargin);
@@ -127,18 +129,34 @@ static CGFloat const kTempImageviewHeight = 100.0f;
             make.width.mas_equalTo(kDefaultWidth);
             make.height.mas_equalTo(kSeperateLineHeight);
         }];
+        [self.contentLabel  mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(kLeftMargin);
+            make.top.equalTo(self.line.mas_bottom).offset(kLeftPadding);
+            make.right.mas_equalTo(kBottomMargin);
+        }];
         [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
             make.left.mas_equalTo(kDefaultPadding);
             make.right.mas_equalTo(kBottomMargin);
             //如果图片不固定高度的话会计算会根据图片本身高度来计算  如果想固定图片高度就把下面的高度注释打开就好了
             // make.height.mas_equalTo(kTempImageviewHeight);
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(kBottomMargin);
-            
+             make.bottom.equalTo(self.contentView.mas_bottom).offset(kBottomMargin);
         }];
         _isFirstVisit = YES;
     }
     
+    if ([self.dataSourceElement isEqualToString:@"2"]) {
+        // 如果 iconimageView的高度是固定的。那么更改约束的话 不仅仅修改的是iconimageview 的约束
+        
+        [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
+        
+            
+            make.top.equalTo(self.contentLabel.mas_bottom).offset(0);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+
+        }];
+        
+    }
     [super updateConstraints];
     
 }
