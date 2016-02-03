@@ -9,6 +9,20 @@
 #import "CustomListCell.h"
 #import "Masonry.h"
 
+static CGFloat const kLeftMargin = 5.0f;
+static CGFloat const kLeftPadding = 10.0f;
+static CGFloat const kRightMargin = -10.0f;
+static CGFloat const kBottomMargin = -10.0f;
+static CGFloat const kTopMargin = 5.0f;
+static CGFloat const kDefaultPadding = 0.0f;
+static CGFloat const kSeperateLineHeight = 0.5f;
+static CGFloat const kDefaultWidth = 20.0f;
+static CGFloat const kDefaultSeperate = 10.0f;
+static NSInteger const kDefaultFactor = 6;
+static CGFloat const kTempImageviewHeight = 100.0f;
+
+#define PhoneBounds [UIScreen mainScreen].bounds
+
 @interface CustomListCell ()
 
 @property (nonatomic, strong) UILabel *nameLabel;
@@ -24,13 +38,14 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         //这个加上是为了解决约束冲突
-        self.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds));
+        self.frame = CGRectMake(0, 0, CGRectGetWidth(PhoneBounds), CGRectGetHeight(PhoneBounds));
         self.contentView.frame = self.frame;
         _isFirstVisit = NO;
     }
     return self;
 }
 - (UILabel *)contentLabel {
+    
     if (!_contentLabel) {
         _contentLabel = [UILabel new];
         _contentLabel.numberOfLines = 0;
@@ -74,8 +89,8 @@
 - (void)layoutSubviews {
     
     //这个得写上 不写高度 出不来啊 因为自适应的高度的话宽度是要固定的。所以这里要给上最大的宽度
-    _nameLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 10;
-    _contentLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 10;
+    _nameLabel.preferredMaxLayoutWidth = CGRectGetWidth(PhoneBounds) - kDefaultSeperate;
+    _contentLabel.preferredMaxLayoutWidth = CGRectGetWidth(PhoneBounds) - kDefaultSeperate;
     [super layoutSubviews];
     
 }
@@ -85,43 +100,40 @@
     self.contentView.backgroundColor = [UIColor lightGrayColor];
     self.nameLabel.backgroundColor = [UIColor orangeColor];
     self.contentLabel.backgroundColor = [UIColor redColor];
-    self.iconImageView.image = [UIImage imageNamed:@"11"];
+    self.iconImageView.image =  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"11" ofType:@"png"]];
+    //[UIImage imageNamed:@"11"];
     self.nameLabel.text = dataSource;
     self.contentLabel.text = dataSource;
 }
 
-
 - (void)updateConstraints {
     
-    //第一次进来的话走的是make  再次进来走的是update
-    
+    //第一次进来的话走的是make  再次进来走的是update 或者 remake
     if (!_isFirstVisit) {
-        
         [self.contentLabel  mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(5);
-            make.top.equalTo(self.line.mas_bottom).offset(10);
-            make.right.mas_equalTo(-5);
-            //            make.bottom.equalTo(self.iconImageView.mas_top).offset(-10);
+            make.left.mas_equalTo(kLeftMargin);
+            make.top.equalTo(self.line.mas_bottom).offset(kLeftPadding);
+            make.right.mas_equalTo(kBottomMargin);
         }];
         
         [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(5);
-            make.top.mas_equalTo(30);
-            make.right.mas_equalTo(-5);
+            make.left.mas_equalTo(kLeftMargin);
+            make.top.mas_equalTo(kTopMargin * kDefaultFactor);
+            make.right.mas_equalTo(kBottomMargin);
         }];
         [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.nameLabel.mas_bottom).offset(10);
-            make.left.mas_equalTo(10);
-            make.width.mas_equalTo(20);
-            make.height.mas_equalTo(0.5);
+            make.top.equalTo(self.nameLabel.mas_bottom).offset(kLeftPadding);
+            make.left.mas_equalTo(kLeftPadding);
+            make.width.mas_equalTo(kDefaultWidth);
+            make.height.mas_equalTo(kSeperateLineHeight);
         }];
         [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentLabel.mas_bottom).offset(10);
-            make.left.mas_equalTo(0);
-            make.right.mas_equalTo(-5);
+            make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
+            make.left.mas_equalTo(kDefaultPadding);
+            make.right.mas_equalTo(kBottomMargin);
             //如果图片不固定高度的话会计算会根据图片本身高度来计算  如果想固定图片高度就把下面的高度注释打开就好了
-            // make.height.mas_equalTo(100);
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+            // make.height.mas_equalTo(kTempImageviewHeight);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(kBottomMargin);
             
         }];
         _isFirstVisit = YES;
