@@ -56,8 +56,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
     if (!_contentLabel) {
         _contentLabel = [UILabel new];
         _contentLabel.numberOfLines = 0;
-        _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
-
+        _contentLabel.font = [UIFont systemFontOfSize:15];
         if ([_contentLabel isDescendantOfView:self.contentView] == NO) {
             [self.contentView addSubview:_contentLabel];
         }
@@ -69,7 +68,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
     if (!_nameLabel) {
         _nameLabel = [UILabel new];
         _nameLabel.numberOfLines = 0;
-        _nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _nameLabel.font = [UIFont systemFontOfSize:13];
         if ([_nameLabel isDescendantOfView:self.contentView] == NO) {
             [self.contentView addSubview:_nameLabel];
         }
