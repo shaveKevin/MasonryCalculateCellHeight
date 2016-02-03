@@ -9,6 +9,13 @@
 #import "CustomListCell.h"
 #import "Masonry.h"
 
+
+// 资源类型
+typedef NS_ENUM(NSInteger,ImageType) {
+    eImageType = 0,              //.
+    eStableImageType = 1,// 图片不固定 (无图)
+    eUnStableImageType = 2, //图片不固定
+};
 static CGFloat const kLeftMargin = 5.0f;
 static CGFloat const kLeftPadding = 10.0f;
 static CGFloat const kRightMargin = -10.0f;
@@ -49,6 +56,8 @@ static CGFloat const kTempImageviewHeight = 100.0f;
     if (!_contentLabel) {
         _contentLabel = [UILabel new];
         _contentLabel.numberOfLines = 0;
+        _contentLabel.lineBreakMode = NSLineBreakByWordWrapping;
+
         if ([_contentLabel isDescendantOfView:self.contentView] == NO) {
             [self.contentView addSubview:_contentLabel];
         }
@@ -60,6 +69,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
     if (!_nameLabel) {
         _nameLabel = [UILabel new];
         _nameLabel.numberOfLines = 0;
+        _nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
         if ([_nameLabel isDescendantOfView:self.contentView] == NO) {
             [self.contentView addSubview:_nameLabel];
         }
@@ -102,7 +112,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
     self.nameLabel.backgroundColor = [UIColor orangeColor];
     self.contentLabel.backgroundColor = [UIColor redColor];
     
-    if (![dataSource  isEqualToString:@"2"]) {
+    if (![dataSource  isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
          self.iconImageView.image =  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"11" ofType:@"png"]];
     }
     else {
@@ -139,7 +149,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
             make.left.mas_equalTo(kDefaultPadding);
             make.right.mas_equalTo(kBottomMargin);
             //如果图片不固定高度的话会计算会根据图片本身高度来计算  如果想固定图片高度就把下面的高度注释打开就好了
-            if ([self.dataSourceElement isEqualToString:@"1"]) {
+            if ([self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eStableImageType]]) {
                 //高度固定的时候处理约束
                 // make.height.mas_equalTo(kTempImageviewHeight);
             }
@@ -148,15 +158,15 @@ static CGFloat const kTempImageviewHeight = 100.0f;
         _isFirstVisit = YES;
     }
     
-    if ([self.dataSourceElement isEqualToString:@"2"]) {
-        // 如果 iconimageView的高度是固定的。那么更改约束的话 不仅仅修改的是iconimageview 的约束
-        
+    if ([self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
+        // 如果 iconimageView的高度不固定的。那么更改约束的话 仅仅修改的是iconimageview 的约束 就可以了。
         [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentLabel.mas_bottom).offset(0);
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+            make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(kDefaultPadding);
+
         }];
         
-    }  else if ([self.dataSourceElement isEqualToString:@"1"]) {
+    }  else if ([self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eStableImageType]]) {
         //如果高度不固定的话处理
         
     }
