@@ -9,13 +9,13 @@
 #import "CustomListCell.h"
 #import "Masonry.h"
 
-
 // 资源类型
 typedef NS_ENUM(NSInteger,ImageType) {
     eImageType = 0,              //.
-    eStableImageType = 1,// 图片不固定 (无图)
+    eStableImageType = 1,// 图片固定 (无图)
     eUnStableImageType = 2, //图片不固定
 };
+//这里的枚举暂时没怎么卵用。 后面写复杂的时候可能会用到
 static CGFloat const kLeftMargin = 5.0f;
 static CGFloat const kLeftPadding = 10.0f;
 static CGFloat const kRightMargin = -10.0f;
@@ -26,18 +26,20 @@ static CGFloat const kSeperateLineHeight = 0.5f;
 static CGFloat const kDefaultWidth = 20.0f;
 static CGFloat const kDefaultSeperate = 10.0f;
 static NSInteger const kDefaultFactor = 6;
-static CGFloat const kTempImageviewHeight = 100.0f;
+static CGFloat const kTempImageviewHeight = 200.0f;
+static CGFloat const kWithOutmageviewHeight = 0.0f;
+
 
 #define PhoneBounds [UIScreen mainScreen].bounds
 
 @interface CustomListCell ()
 
-@property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UILabel *contentLabel;
-@property (nonatomic, strong) UILabel *line;
-@property (nonatomic, strong) UIImageView *iconImageView;
-@property (nonatomic, assign) BOOL isFirstVisit;
-@property (nonatomic, assign) id  dataSourceElement;
+@property (nonatomic, strong) UILabel *nameLabel; // 名字
+@property (nonatomic, strong) UILabel *contentLabel; // n内容
+@property (nonatomic, strong) UILabel *line; //分割线
+@property (nonatomic, strong) UIImageView *iconImageView; //图片
+@property (nonatomic, assign) BOOL isFirstVisit; //是否第一次
+@property (nonatomic, assign) id  dataSourceElement;// 数据单元
 @end
 
 @implementation CustomListCell
@@ -48,6 +50,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
         self.frame = CGRectMake(0, 0, CGRectGetWidth(PhoneBounds), CGRectGetHeight(PhoneBounds));
         self.contentView.frame = self.frame;
         _isFirstVisit = NO;
+        self.backgroundColor = [UIColor colorWithRed:arc4random()%255/256.0 green:arc4random()%255/256.0 blue:arc4random()%255/256.0 alpha:1.0f];
     }
     return self;
 }
@@ -65,6 +68,7 @@ static CGFloat const kTempImageviewHeight = 100.0f;
 }
 
 - (UILabel *)nameLabel {
+    
     if (!_nameLabel) {
         _nameLabel = [UILabel new];
         _nameLabel.numberOfLines = 0;
@@ -107,10 +111,10 @@ static CGFloat const kTempImageviewHeight = 100.0f;
 - (void)customListBlindCell:(id)dataSource {
     
     _dataSourceElement = dataSource;
-    self.contentView.backgroundColor = [UIColor lightGrayColor];
     self.nameLabel.backgroundColor = [UIColor orangeColor];
     self.contentLabel.backgroundColor = [UIColor redColor];
-    
+    self.iconImageView.backgroundColor = [UIColor blackColor];
+    //如果不是2的话有图 否则无图
     if (![dataSource  isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
          self.iconImageView.image =  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"11" ofType:@"png"]];
     }
@@ -120,12 +124,12 @@ static CGFloat const kTempImageviewHeight = 100.0f;
     self.nameLabel.text = dataSource;
     self.contentLabel.text = dataSource;
 }
-
+#pragma mark  - 约束的添加和更新
 - (void)updateConstraints {
     
     //第一次进来的话走的是make  再次进来走的是update 或者 remake
+    //这里我们在第一次的时候会把我们所有的空间约束加载一遍 这里只加载一次，然后我们需要在下面做的就是对约束进行更新
     if (!_isFirstVisit) {
-        
         
         [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(kLeftMargin);
@@ -147,28 +151,31 @@ static CGFloat const kTempImageviewHeight = 100.0f;
             make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
             make.left.mas_equalTo(kDefaultPadding);
             make.right.mas_equalTo(kBottomMargin);
-            //如果图片不固定高度的话会计算会根据图片本身高度来计算  如果想固定图片高度就把下面的高度注释打开就好了
-            if ([self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eStableImageType]]) {
-                //高度固定的时候处理约束
-                // make.height.mas_equalTo(kTempImageviewHeight);
-            }
-             make.bottom.equalTo(self.contentView.mas_bottom).offset(kBottomMargin);
+            make.height.mas_equalTo(kTempImageviewHeight);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(kBottomMargin);
         }];
         _isFirstVisit = YES;
     }
-    
+    //更新约束的适用范围：我们把动态的东西在这里进行更新 比如说图像的有无，label 文字的显隐等等。这里只需要做的是更新约束就好。
+    //处理无图的情况
     if ([self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
-        // 如果 iconimageView的高度不固定的。那么更改约束的话 仅仅修改的是iconimageview 的约束 就可以了。
+
+        // 这里只需要处理特殊情况 无图 的情况  有图的 可以考虑更新图的高度之类的
         [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(kDefaultPadding);
-
+            make.height.mas_equalTo(kWithOutmageviewHeight);
         }];
         
-    }  else if ([self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eStableImageType]]) {
-        //如果高度不固定的话处理
-        
+    }  else  {
+        //处理有图的情况这里往往要把改动的约束全部加上。
+        [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(kRightMargin);
+            make.height.mas_equalTo(kTempImageviewHeight);
+        }];
     }
+    
     [super updateConstraints];
     
 }

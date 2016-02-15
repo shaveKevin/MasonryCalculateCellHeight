@@ -10,6 +10,11 @@
 
 @interface CustomListCell : UITableViewCell
 
-
+/**
+ *  绑定数据源
+ *
+ *  @param dataSource 数据源
+ */
 - (void)customListBlindCell:(id)dataSource;
+
 @end

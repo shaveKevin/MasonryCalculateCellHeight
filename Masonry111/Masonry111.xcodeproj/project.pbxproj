@@ -237,7 +237,6 @@
 				TargetAttributes = {
 					2CAB05F21C56822400175074 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = YB5R6DKEEP;
 					};
 					2CAB060B1C56822400175074 = {
 						CreatedOnToolsVersion = 7.2;
