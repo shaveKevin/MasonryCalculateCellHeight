@@ -36,8 +36,8 @@ static  NSString *const cellIdentifier = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
-//    self.tableView.estimatedRowHeight = 200;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 200;
     [self.tableView registerClass:[CustomListCell class] forCellReuseIdentifier:cellIdentifier];
     [self setupDatasource];
    
@@ -53,9 +53,7 @@ static  NSString *const cellIdentifier = @"cell";
     [cell customListBlindCell: _dataArray[indexPath.row]];
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
-    [cell setNeedsLayout];
-    [cell layoutIfNeeded];
-    
+
     return cell;
 }
 

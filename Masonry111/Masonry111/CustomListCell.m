@@ -25,9 +25,9 @@ static CGFloat const kDefaultPadding = 0.0f;
 static CGFloat const kSeperateLineHeight = 0.5f;
 static CGFloat const kDefaultWidth = 20.0f;
 static CGFloat const kDefaultSeperate = 10.0f;
-static NSInteger const kDefaultFactor = 6;
 static CGFloat const kTempImageviewHeight = 200.0f;
 static CGFloat const kWithOutmageviewHeight = 0.0f;
+static NSInteger const kDefaultFactor = 6;
 
 
 #define PhoneBounds [UIScreen mainScreen].bounds
@@ -38,6 +38,7 @@ static CGFloat const kWithOutmageviewHeight = 0.0f;
 @property (nonatomic, strong) UILabel *contentLabel; // n内容
 @property (nonatomic, strong) UILabel *line; //分割线
 @property (nonatomic, strong) UIImageView *iconImageView; //图片
+@property (nonatomic, strong) UIView *bottomView;//底部的eview
 @property (nonatomic, assign) BOOL isFirstVisit; //是否第一次
 @property (nonatomic, assign) id  dataSourceElement;// 数据单元
 @end
@@ -99,6 +100,17 @@ static CGFloat const kWithOutmageviewHeight = 0.0f;
     }
     return _iconImageView;
 }
+
+-(UIView *)bottomView {
+    
+    if (!_bottomView) {
+        _bottomView = [[UIView alloc]init];
+        _bottomView.backgroundColor = [UIColor blackColor];
+        [self.contentView addSubview:_bottomView];
+        
+    }
+    return _bottomView;
+}
 - (void)layoutSubviews {
     
     //这个得写上 不写高度 出不来啊 因为自适应的高度的话宽度是要固定的。所以这里要给上最大的宽度
@@ -114,21 +126,22 @@ static CGFloat const kWithOutmageviewHeight = 0.0f;
     self.nameLabel.backgroundColor = [UIColor orangeColor];
     self.contentLabel.backgroundColor = [UIColor redColor];
     self.iconImageView.backgroundColor = [UIColor blackColor];
+    self.bottomView.backgroundColor = [UIColor blackColor];
     //如果不是2的话有图 否则无图
     if (![dataSource  isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
          self.iconImageView.image =  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"11" ofType:@"png"]];
     }
-    else {
-        self.iconImageView.image = nil;
-    }
     self.nameLabel.text = dataSource;
     self.contentLabel.text = dataSource;
+   
 }
 #pragma mark  - 约束的添加和更新
 - (void)updateConstraints {
     
+        [super updateConstraints];
+    
     //第一次进来的话走的是make  再次进来走的是update 或者 remake
-    //这里我们在第一次的时候会把我们所有的空间约束加载一遍 这里只加载一次，然后我们需要在下面做的就是对约束进行更新
+    //这里我们在第一次的时候会把我们所有的控件约束加载一遍 这里只加载一次，然后我们需要在下面做的就是对约束进行更新
     if (!_isFirstVisit) {
         
         [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -151,8 +164,15 @@ static CGFloat const kWithOutmageviewHeight = 0.0f;
             make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
             make.left.mas_equalTo(kDefaultPadding);
             make.right.mas_equalTo(kBottomMargin);
-            make.height.mas_equalTo(kTempImageviewHeight);
+            make.height.mas_equalTo(100);
+        }];
+        [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.iconImageView.mas_bottom).offset(10);
+            make.left.mas_equalTo(10);
+            make.right.mas_equalTo(-10);
+            make.height.mas_equalTo(20);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(kBottomMargin);
+
         }];
         _isFirstVisit = YES;
     }
@@ -162,21 +182,31 @@ static CGFloat const kWithOutmageviewHeight = 0.0f;
 
         // 这里只需要处理特殊情况 无图 的情况  有图的 可以考虑更新图的高度之类的
         [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(kDefaultPadding);
+            make.top.equalTo(self.contentLabel.mas_bottom).offset(10);
             make.height.mas_equalTo(kWithOutmageviewHeight);
         }];
+        [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.iconImageView.mas_bottom).offset(0);
+
+        }];
         
-    }  else  {
-        //处理有图的情况这里往往要把改动的约束全部加上。
+
+        
+    }
+    else  {
+        //处理有图的情况这里往往要把改动的约束加上。因为第一次的高不一定是
         [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(kRightMargin);
             make.height.mas_equalTo(kTempImageviewHeight);
         }];
+        [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.iconImageView.mas_bottom).offset(10);
+            
+        }];
+
     }
     
-    [super updateConstraints];
+
     
 }
 @end
