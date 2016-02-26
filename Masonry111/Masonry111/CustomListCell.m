@@ -36,7 +36,7 @@ static NSInteger const kDefaultFactor = 6;
 
 @property (nonatomic, strong) UILabel *nameLabel; // 名字
 @property (nonatomic, strong) UILabel *contentLabel; // n内容
-@property (nonatomic, strong) UILabel *line; //分割线
+@property (nonatomic, strong) UIView *line; //分割线
 @property (nonatomic, strong) UIImageView *iconImageView; //图片
 @property (nonatomic, strong) UIView *bottomView;//底部的eview
 @property (nonatomic, assign) BOOL isFirstVisit; //是否第一次
@@ -51,7 +51,6 @@ static NSInteger const kDefaultFactor = 6;
         self.frame = CGRectMake(0, 0, CGRectGetWidth(PhoneBounds), CGRectGetHeight(PhoneBounds));
         self.contentView.frame = self.frame;
         _isFirstVisit = NO;
-        self.backgroundColor = [UIColor colorWithRed:arc4random()%255/256.0 green:arc4random()%255/256.0 blue:arc4random()%255/256.0 alpha:1.0f];
     }
     return self;
 }
@@ -194,14 +193,13 @@ static NSInteger const kDefaultFactor = 6;
         
     }
     else  {
-        //处理有图的情况这里往往要把改动的约束加上。因为第一次的高不一定是
+        //处理有图的情况这里往往要把改动的约束加上。因为第一次的高不一定是我们想要的。
         [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
             make.height.mas_equalTo(kTempImageviewHeight);
         }];
         [self.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.iconImageView.mas_bottom).offset(10);
-            
         }];
 
     }

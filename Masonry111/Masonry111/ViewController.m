@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Masonry.h"
 #import "CustomListCell.h"
+#import "YYFPSLabel.h"
 static  NSString *const cellIdentifier = @"cell";
 #define PhoneBounds [UIScreen mainScreen].bounds
 
@@ -20,12 +21,14 @@ static  NSString *const cellIdentifier = @"cell";
 
 @implementation ViewController
 
--(UITableView *)tableView {
+- (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [self.view addSubview:_tableView];
+    
+        
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.insets(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
@@ -40,11 +43,15 @@ static  NSString *const cellIdentifier = @"cell";
     self.tableView.estimatedRowHeight = 200;
     [self.tableView registerClass:[CustomListCell class] forCellReuseIdentifier:cellIdentifier];
     [self setupDatasource];
+    YYFPSLabel *label = [YYFPSLabel new];
+    label.frame = CGRectMake((CGRectGetWidth(PhoneBounds)- 100)/2.0f, 0, 100, 30);
+    [self.navigationController.navigationBar  addSubview:label];
    
 }
 
 #pragma mark  - tableview delegate and datasource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     CustomListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     //这个加上是为了解决约束冲突
