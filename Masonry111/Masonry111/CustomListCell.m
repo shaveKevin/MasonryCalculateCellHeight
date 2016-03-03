@@ -18,7 +18,6 @@ typedef NS_ENUM(NSInteger,ImageType) {
 //这里的枚举暂时没怎么卵用。 后面写复杂的时候可能会用到
 static CGFloat const kLeftMargin = 5.0f;
 static CGFloat const kLeftPadding = 10.0f;
-static CGFloat const kRightMargin = -10.0f;
 static CGFloat const kBottomMargin = -10.0f;
 static CGFloat const kTopMargin = 5.0f;
 static CGFloat const kDefaultPadding = 0.0f;
@@ -28,7 +27,6 @@ static CGFloat const kDefaultSeperate = 10.0f;
 static CGFloat const kTempImageviewHeight = 200.0f;
 static CGFloat const kWithOutmageviewHeight = 0.0f;
 static NSInteger const kDefaultFactor = 6;
-
 
 #define PhoneBounds [UIScreen mainScreen].bounds
 
@@ -79,9 +77,9 @@ static NSInteger const kDefaultFactor = 6;
     }
     return _nameLabel;
 }
-- (UILabel *)line {
+- (UIView *)line {
     if (!_line) {
-        _line = [UILabel new];
+        _line = [UIView new];
         _line.backgroundColor = [UIColor redColor];
         if ([_line isDescendantOfView:self.contentView] == NO) {
             [self.contentView addSubview:_line];

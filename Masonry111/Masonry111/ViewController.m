@@ -28,7 +28,6 @@ static  NSString *const cellIdentifier = @"cell";
         _tableView.dataSource = self;
         [self.view addSubview:_tableView];
     
-        
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.insets(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
@@ -53,7 +52,6 @@ static  NSString *const cellIdentifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CustomListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
     //这个加上是为了解决约束冲突
     cell.frame = CGRectMake(0, 0, CGRectGetWidth(PhoneBounds), CGRectGetHeight(PhoneBounds));
     cell.contentView.frame = cell.frame;
@@ -68,8 +66,17 @@ static  NSString *const cellIdentifier = @"cell";
     return _dataArray.count;
 }
 
+/**
+ *   iOS8以后如果使用的是masonry 的话  返回高度的方法可以不用写 需要调用
+ *   self.tableView.rowHeight = UITableViewAutomaticDimension;
+ *   self.tableView.estimatedRowHeight = 200;
+ *
+ *  @return
+ */
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //从重用池取出去的cell 然后对cell进行赋值 通过赋值 来调用是否更新约束的方法
     [self.tempCell customListBlindCell:_dataArray[indexPath.row]];
     [self.tempCell setNeedsUpdateConstraints];
     [self.tempCell updateConstraintsIfNeeded];
