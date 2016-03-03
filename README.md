@@ -67,9 +67,12 @@ cell.contentView.frame = cell.frame;
 }
  ```
  在heightforrow里面执行如下操作
+ 
+ 
  ```
+ 
  - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    //从重用池取出去的cell 然后对cell进行赋值 通过赋值 来调用是否更新约束的方法
     [self.tempCell customListBlindCell:_dataArray[indexPath.row]];
     [self.tempCell setNeedsUpdateConstraints];
     [self.tempCell updateConstraintsIfNeeded];
@@ -78,11 +81,13 @@ cell.contentView.frame = cell.frame;
     return [self.tempCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1 ;
 }
 ```
+
+
 //在iOS7的时候我们使用这样的方法来得到cell的高度 目的是让系统根据我们添加的约束来自动帮我们计算出内容的高度
 
 因为我们使用的是self.contentview所以最后得到的结果应该加上分割线1的高度。
 
-在iOS8以后我们就可以给一个高度让系统帮我们来实现求cell高的方法
+在iOS8以后我们就可以给一个高度让系统帮我们来实现求cell高的方法(这样说法不太准确 因为一下面两个APIiOS7就有了 只不过在iOS7需要我们必须实现heightForRowAtIndexPath 这个方法，所以高度我们需要在这里返回)
 ```
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 200;
@@ -143,6 +148,29 @@ cell.contentView.frame = cell.frame;
 ####这样处理的目的是为了防止约束冲突。因为我们刚创建的时候cell的高度是默认的44.所以为了避免我们在添加子控件的时候由于两者高度不同造成的约束冲突。
 
 
+```
+方法解释：
+
+setNeedsUpdateConstraints
+Controls whether the view’s constraints need updating.
+When a property of your custom view changes in a way that would impact constraints, you can call this method to indicate that the constraints need to be updated at some point in the future. The system will then call updateConstraints as part of its normal layout pass. Updating constraints all at once just before they are needed ensures that you don’t needlessly recalculate constraints when multiple changes are made to your view in between layout passes.
+
+updateConstraintsIfNeeded
+Updates the constraints for the receiving view and its subviews.
+Whenever a new layout pass is triggered for a view, the system invokes this method to ensure that any constraints for the view and its subviews are updated with information from the current view hierarchy and its constraints. This method is called automatically by the system, but may be invoked manually if you need to examine the most up to date constraints.
+
+setNeedsLayout
+
+Lays out the subviews immediately. 
+Use this method to force the layout of subviews before drawing. Using the view that receives the message as the root view, this method lays out the view subtree starting at the root.
+
+layoutIfNeeded
+
+Lays out the subviews immediately.
+Use this method to force the layout of subviews before drawing. Using the view that receives the message as the root view, this method lays out the view subtree starting at the root.
+
+
+```
 
 个人博客  [www.shavekevin.com](http://shavekevin.com/)
 
