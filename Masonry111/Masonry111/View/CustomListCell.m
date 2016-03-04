@@ -126,7 +126,7 @@ static NSInteger const kDefaultFactor = 6;
     self.bottomView.backgroundColor = [UIColor blackColor];
     //如果不是2的话有图 否则无图
     if (![dataSource  isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
-         self.iconImageView.image =  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"11" ofType:@"png"]];
+         self.iconImageView.image =  [UIImage imageNamed:@"staticImage"];
     }
     self.nameLabel.text = dataSource;
     self.contentLabel.text = dataSource;

@@ -6,23 +6,25 @@
 //  Copyright © 2016年 shavekevin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "StaticViewController.h"
 #import "Masonry.h"
 #import "CustomListCell.h"
 #import "YYFPSLabel.h"
 static  NSString *const cellIdentifier = @"cell";
 #define PhoneBounds [UIScreen mainScreen].bounds
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface StaticViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) CustomListCell *tempCell;
 @property (nonatomic, strong) NSArray *dataArray;
 @end
 
-@implementation ViewController
+@implementation StaticViewController
 
 - (UITableView *)tableView {
+    
     if (!_tableView) {
+        
         _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -38,15 +40,16 @@ static  NSString *const cellIdentifier = @"cell";
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+   // self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 200;
     [self.tableView registerClass:[CustomListCell class] forCellReuseIdentifier:cellIdentifier];
     [self setupDatasource];
     YYFPSLabel *label = [YYFPSLabel new];
     label.frame = CGRectMake((CGRectGetWidth(PhoneBounds)- 100)/2.0f, 0, 100, 30);
     [self.navigationController.navigationBar  addSubview:label];
-   [self addHeaderView];
+    [self addHeaderView];
 }
 
 //TableviewHeaderview不可以被加约束可是它的子视图可以加约束 这里给一个高度就好
@@ -67,6 +70,7 @@ static  NSString *const cellIdentifier = @"cell";
 }
 
 #pragma mark  - tableview delegate and datasource
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CustomListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -92,16 +96,16 @@ static  NSString *const cellIdentifier = @"cell";
  *  @return
  */
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //从重用池取出去的cell 然后对cell进行赋值 通过赋值 来调用是否更新约束的方法
-    [self.tempCell customListBlindCell:_dataArray[indexPath.row]];
-    [self.tempCell setNeedsUpdateConstraints];
-    [self.tempCell updateConstraintsIfNeeded];
-    [self.tempCell setNeedsLayout];
-    [self.tempCell layoutIfNeeded];
-    return [self.tempCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1 ;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    //从重用池取出去的cell 然后对cell进行赋值 通过赋值 来调用是否更新约束的方法
+//    [self.tempCell customListBlindCell:_dataArray[indexPath.row]];
+//    [self.tempCell setNeedsUpdateConstraints];
+//    [self.tempCell updateConstraintsIfNeeded];
+//    [self.tempCell setNeedsLayout];
+//    [self.tempCell layoutIfNeeded];
+//    return [self.tempCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1 ;
+//}
 //懒加载一个cell 用于计算高度(从重用池中取出)
 - (CustomListCell *)tempCell {
     

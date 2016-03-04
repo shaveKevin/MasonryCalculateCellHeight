@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0D5BD6C384EEC576E8168D2B /* Pods_Masonry111Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6308FC3DB25BAB01B5219BEA /* Pods_Masonry111Tests.framework */; };
+		2C4E59701C89860300E967C2 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E596F1C89860300E967C2 /* YYFPSLabel.m */; };
+		2C4E59761C89860E00E967C2 /* CustomListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E59731C89860E00E967C2 /* CustomListCell.m */; };
+		2C4E59771C89860E00E967C2 /* NewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E59751C89860E00E967C2 /* NewsListCell.m */; };
+		2C4E597D1C89861700E967C2 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E597A1C89861700E967C2 /* NewsViewController.m */; };
+		2C4E597E1C89861700E967C2 /* StaticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E597C1C89861700E967C2 /* StaticViewController.m */; };
 		2CAB05F81C56822400175074 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB05F71C56822400175074 /* main.m */; };
 		2CAB05FB1C56822400175074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB05FA1C56822400175074 /* AppDelegate.m */; };
-		2CAB05FE1C56822400175074 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB05FD1C56822400175074 /* ViewController.m */; };
 		2CAB06011C56822400175074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAB05FF1C56822400175074 /* Main.storyboard */; };
 		2CAB06031C56822400175074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAB06021C56822400175074 /* Assets.xcassets */; };
 		2CAB06061C56822400175074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAB06041C56822400175074 /* LaunchScreen.storyboard */; };
-		2CAB062B1C57016800175074 /* CustomListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB062A1C57016800175074 /* CustomListCell.m */; };
-		2CAD7DCC1C804E9C009BB969 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD7DCB1C804E9C009BB969 /* YYFPSLabel.m */; };
-		2CDE60501C60BF1C00F9F1B4 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE604F1C60BF1C00F9F1B4 /* 11.png */; };
 		343A70B1F50F516157622ECF /* Pods_Masonry111.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E11295CD10EB94DFF758ABF7 /* Pods_Masonry111.framework */; };
 		DC2B73009C720C6397DDF071 /* Pods_Masonry111UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD7249BDE812AC7C6B1083AC /* Pods_Masonry111UITests.framework */; };
 /* End PBXBuildFile section */
@@ -40,23 +41,26 @@
 
 /* Begin PBXFileReference section */
 		2310D39471EF54BA806065DD /* Pods-Masonry111.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Masonry111.release.xcconfig"; path = "Pods/Target Support Files/Pods-Masonry111/Pods-Masonry111.release.xcconfig"; sourceTree = "<group>"; };
+		2C4E596E1C89860300E967C2 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		2C4E596F1C89860300E967C2 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		2C4E59721C89860E00E967C2 /* CustomListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomListCell.h; sourceTree = "<group>"; };
+		2C4E59731C89860E00E967C2 /* CustomListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomListCell.m; sourceTree = "<group>"; };
+		2C4E59741C89860E00E967C2 /* NewsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListCell.h; sourceTree = "<group>"; };
+		2C4E59751C89860E00E967C2 /* NewsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListCell.m; sourceTree = "<group>"; };
+		2C4E59791C89861700E967C2 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		2C4E597A1C89861700E967C2 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		2C4E597B1C89861700E967C2 /* StaticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticViewController.h; sourceTree = "<group>"; };
+		2C4E597C1C89861700E967C2 /* StaticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticViewController.m; sourceTree = "<group>"; };
 		2CAB05F31C56822400175074 /* Masonry111.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masonry111.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAB05F71C56822400175074 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CAB05F91C56822400175074 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2CAB05FA1C56822400175074 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2CAB05FC1C56822400175074 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2CAB05FD1C56822400175074 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2CAB06001C56822400175074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CAB06021C56822400175074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CAB06051C56822400175074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CAB06071C56822400175074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CAB060C1C56822400175074 /* Masonry111Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry111Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAB06171C56822400175074 /* Masonry111UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry111UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CAB06291C57016800175074 /* CustomListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomListCell.h; sourceTree = "<group>"; };
-		2CAB062A1C57016800175074 /* CustomListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomListCell.m; sourceTree = "<group>"; };
-		2CAD7DCA1C804E9C009BB969 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
-		2CAD7DCB1C804E9C009BB969 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
-		2CDE604F1C60BF1C00F9F1B4 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
 		43A06F5D39E393D77D227F20 /* Pods-Masonry111Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Masonry111Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Masonry111Tests/Pods-Masonry111Tests.release.xcconfig"; sourceTree = "<group>"; };
 		570A8C4189E6A52B71380705 /* Pods-Masonry111.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Masonry111.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Masonry111/Pods-Masonry111.debug.xcconfig"; sourceTree = "<group>"; };
 		6308FC3DB25BAB01B5219BEA /* Pods_Masonry111Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Masonry111Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +99,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4E59681C8984C600E967C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2C4E596D1C89860300E967C2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E596E1C89860300E967C2 /* YYFPSLabel.h */,
+				2C4E596F1C89860300E967C2 /* YYFPSLabel.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		2C4E59711C89860E00E967C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E59721C89860E00E967C2 /* CustomListCell.h */,
+				2C4E59731C89860E00E967C2 /* CustomListCell.m */,
+				2C4E59741C89860E00E967C2 /* NewsListCell.h */,
+				2C4E59751C89860E00E967C2 /* NewsListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C4E59781C89861700E967C2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C4E59791C89861700E967C2 /* NewsViewController.h */,
+				2C4E597A1C89861700E967C2 /* NewsViewController.m */,
+				2C4E597B1C89861700E967C2 /* StaticViewController.h */,
+				2C4E597C1C89861700E967C2 /* StaticViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2CAB05EA1C56822400175074 = {
 			isa = PBXGroup;
 			children = (
@@ -120,13 +162,10 @@
 			children = (
 				2CAB05F91C56822400175074 /* AppDelegate.h */,
 				2CAB05FA1C56822400175074 /* AppDelegate.m */,
-				2CAB05FC1C56822400175074 /* ViewController.h */,
-				2CAB05FD1C56822400175074 /* ViewController.m */,
-				2CAB06291C57016800175074 /* CustomListCell.h */,
-				2CAB062A1C57016800175074 /* CustomListCell.m */,
-				2CAD7DCA1C804E9C009BB969 /* YYFPSLabel.h */,
-				2CAD7DCB1C804E9C009BB969 /* YYFPSLabel.m */,
-				2CDE604F1C60BF1C00F9F1B4 /* 11.png */,
+				2C4E59781C89861700E967C2 /* Controller */,
+				2C4E59711C89860E00E967C2 /* View */,
+				2C4E596D1C89860300E967C2 /* Utility */,
+				2C4E59681C8984C600E967C2 /* Model */,
 				2CAB05FF1C56822400175074 /* Main.storyboard */,
 				2CAB06021C56822400175074 /* Assets.xcassets */,
 				2CAB06041C56822400175074 /* LaunchScreen.storyboard */,
@@ -281,7 +320,6 @@
 				2CAB06061C56822400175074 /* LaunchScreen.storyboard in Resources */,
 				2CAB06031C56822400175074 /* Assets.xcassets in Resources */,
 				2CAB06011C56822400175074 /* Main.storyboard in Resources */,
-				2CDE60501C60BF1C00F9F1B4 /* 11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,10 +467,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CAD7DCC1C804E9C009BB969 /* YYFPSLabel.m in Sources */,
-				2CAB05FE1C56822400175074 /* ViewController.m in Sources */,
+				2C4E59701C89860300E967C2 /* YYFPSLabel.m in Sources */,
+				2C4E597E1C89861700E967C2 /* StaticViewController.m in Sources */,
+				2C4E59771C89860E00E967C2 /* NewsListCell.m in Sources */,
 				2CAB05FB1C56822400175074 /* AppDelegate.m in Sources */,
-				2CAB062B1C57016800175074 /* CustomListCell.m in Sources */,
+				2C4E597D1C89861700E967C2 /* NewsViewController.m in Sources */,
+				2C4E59761C89860E00E967C2 /* CustomListCell.m in Sources */,
 				2CAB05F81C56822400175074 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

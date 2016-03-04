@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  NewsListCell.h
 //  Masonry111
 //
-//  Created by shavekevin on 16/1/26.
+//  Created by shavekevin on 16/3/4.
 //  Copyright © 2016年 shavekevin. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface NewsListCell : UITableViewCell
 
 @end
-
