@@ -32,6 +32,7 @@ static  NSString *const cellIdentifier = @"cell";
             make.edges.insets(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
         
+        
     }
     return _tableView;
 }
@@ -45,7 +46,24 @@ static  NSString *const cellIdentifier = @"cell";
     YYFPSLabel *label = [YYFPSLabel new];
     label.frame = CGRectMake((CGRectGetWidth(PhoneBounds)- 100)/2.0f, 0, 100, 30);
     [self.navigationController.navigationBar  addSubview:label];
-   
+   [self addHeaderView];
+}
+
+//TableviewHeaderview不可以被加约束可是它的子视图可以加约束 这里给一个高度就好
+- (void)addHeaderView {
+    
+    UIView *viewContview = [UIView new];
+    viewContview.frame = CGRectMake(0, 0, 0, 100);
+    viewContview.backgroundColor = [UIColor clearColor];
+    self.tableView.tableHeaderView = viewContview;
+
+    UIView *viewCss = [UIView new];
+    [viewContview addSubview:viewCss];
+    viewCss.backgroundColor = [UIColor orangeColor];
+    [viewCss mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+    }];
+    
 }
 
 #pragma mark  - tableview delegate and datasource
