@@ -151,14 +151,17 @@ cell.contentView.frame = cell.frame;
 ```
 方法解释：
 
+告诉对象约束需要更新
 setNeedsUpdateConstraints
 Controls whether the view’s constraints need updating.
 When a property of your custom view changes in a way that would impact constraints, you can call this method to indicate that the constraints need to be updated at some point in the future. The system will then call updateConstraints as part of its normal layout pass. Updating constraints all at once just before they are needed ensures that you don’t needlessly recalculate constraints when multiple changes are made to your view in between layout passes.
 
+  调用此方法告诉对象检测是否需要更新约束。
 updateConstraintsIfNeeded
 Updates the constraints for the receiving view and its subviews.
 Whenever a new layout pass is triggered for a view, the system invokes this method to ensure that any constraints for the view and its subviews are updated with information from the current view hierarchy and its constraints. This method is called automatically by the system, but may be invoked manually if you need to examine the most up to date constraints.
 
+是否立即需要把更新约束的视图效果展示
 setNeedsLayout
 
 Lays out the subviews immediately. 
