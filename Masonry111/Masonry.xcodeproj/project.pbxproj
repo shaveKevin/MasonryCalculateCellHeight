@@ -51,7 +51,7 @@
 		2C4E597A1C89861700E967C2 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		2C4E597B1C89861700E967C2 /* StaticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticViewController.h; sourceTree = "<group>"; };
 		2C4E597C1C89861700E967C2 /* StaticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticViewController.m; sourceTree = "<group>"; };
-		2CAB05F31C56822400175074 /* Masonry111.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masonry111.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAB05F31C56822400175074 /* Masonry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masonry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAB05F71C56822400175074 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CAB05F91C56822400175074 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2CAB05FA1C56822400175074 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,8 +59,8 @@
 		2CAB06021C56822400175074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CAB06051C56822400175074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CAB06071C56822400175074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CAB060C1C56822400175074 /* Masonry111Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry111Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CAB06171C56822400175074 /* Masonry111UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry111UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAB060C1C56822400175074 /* Masonry.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAB06171C56822400175074 /* Masonry.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A06F5D39E393D77D227F20 /* Pods-Masonry111Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Masonry111Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Masonry111Tests/Pods-Masonry111Tests.release.xcconfig"; sourceTree = "<group>"; };
 		570A8C4189E6A52B71380705 /* Pods-Masonry111.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Masonry111.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Masonry111/Pods-Masonry111.debug.xcconfig"; sourceTree = "<group>"; };
 		6308FC3DB25BAB01B5219BEA /* Pods_Masonry111Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Masonry111Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +140,7 @@
 		2CAB05EA1C56822400175074 = {
 			isa = PBXGroup;
 			children = (
-				2CAB05F51C56822400175074 /* Masonry111 */,
+				2CAB05F51C56822400175074 /* Masonry */,
 				2CAB05F41C56822400175074 /* Products */,
 				D353D0841EB8ACEAF0AFFEC1 /* Pods */,
 				6442588B0B1490CD7E03E5D5 /* Frameworks */,
@@ -150,14 +150,14 @@
 		2CAB05F41C56822400175074 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CAB05F31C56822400175074 /* Masonry111.app */,
-				2CAB060C1C56822400175074 /* Masonry111Tests.xctest */,
-				2CAB06171C56822400175074 /* Masonry111UITests.xctest */,
+				2CAB05F31C56822400175074 /* Masonry.app */,
+				2CAB060C1C56822400175074 /* Masonry.xctest */,
+				2CAB06171C56822400175074 /* Masonry.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2CAB05F51C56822400175074 /* Masonry111 */ = {
+		2CAB05F51C56822400175074 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
 				2CAB05F91C56822400175074 /* AppDelegate.h */,
@@ -172,6 +172,7 @@
 				2CAB06071C56822400175074 /* Info.plist */,
 				2CAB05F61C56822400175074 /* Supporting Files */,
 			);
+			name = Masonry;
 			path = Masonry111;
 			sourceTree = "<group>";
 		};
@@ -209,9 +210,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CAB05F21C56822400175074 /* Masonry111 */ = {
+		2CAB05F21C56822400175074 /* Masonry */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CAB06201C56822400175074 /* Build configuration list for PBXNativeTarget "Masonry111" */;
+			buildConfigurationList = 2CAB06201C56822400175074 /* Build configuration list for PBXNativeTarget "Masonry" */;
 			buildPhases = (
 				886B305E51ED2EC1AF6E0C81 /* Check Pods Manifest.lock */,
 				2CAB05EF1C56822400175074 /* Sources */,
@@ -224,14 +225,14 @@
 			);
 			dependencies = (
 			);
-			name = Masonry111;
+			name = Masonry;
 			productName = Masonry111;
-			productReference = 2CAB05F31C56822400175074 /* Masonry111.app */;
+			productReference = 2CAB05F31C56822400175074 /* Masonry.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2CAB060B1C56822400175074 /* Masonry111Tests */ = {
+		2CAB060B1C56822400175074 /* MasonryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CAB06231C56822400175074 /* Build configuration list for PBXNativeTarget "Masonry111Tests" */;
+			buildConfigurationList = 2CAB06231C56822400175074 /* Build configuration list for PBXNativeTarget "MasonryTests" */;
 			buildPhases = (
 				E063315ECCAF101C3E45A53E /* Check Pods Manifest.lock */,
 				2CAB06081C56822400175074 /* Sources */,
@@ -245,14 +246,14 @@
 			dependencies = (
 				2CAB060E1C56822400175074 /* PBXTargetDependency */,
 			);
-			name = Masonry111Tests;
+			name = MasonryTests;
 			productName = Masonry111Tests;
-			productReference = 2CAB060C1C56822400175074 /* Masonry111Tests.xctest */;
+			productReference = 2CAB060C1C56822400175074 /* Masonry.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2CAB06161C56822400175074 /* Masonry111UITests */ = {
+		2CAB06161C56822400175074 /* MasonryUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CAB06261C56822400175074 /* Build configuration list for PBXNativeTarget "Masonry111UITests" */;
+			buildConfigurationList = 2CAB06261C56822400175074 /* Build configuration list for PBXNativeTarget "MasonryUITests" */;
 			buildPhases = (
 				6AA9FEE847FF212466B00943 /* Check Pods Manifest.lock */,
 				2CAB06131C56822400175074 /* Sources */,
@@ -265,9 +266,9 @@
 			dependencies = (
 				2CAB06191C56822400175074 /* PBXTargetDependency */,
 			);
-			name = Masonry111UITests;
+			name = MasonryUITests;
 			productName = Masonry111UITests;
-			productReference = 2CAB06171C56822400175074 /* Masonry111UITests.xctest */;
+			productReference = 2CAB06171C56822400175074 /* Masonry.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +293,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2CAB05EE1C56822400175074 /* Build configuration list for PBXProject "Masonry111" */;
+			buildConfigurationList = 2CAB05EE1C56822400175074 /* Build configuration list for PBXProject "Masonry" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -305,9 +306,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CAB05F21C56822400175074 /* Masonry111 */,
-				2CAB060B1C56822400175074 /* Masonry111Tests */,
-				2CAB06161C56822400175074 /* Masonry111UITests */,
+				2CAB05F21C56822400175074 /* Masonry */,
+				2CAB060B1C56822400175074 /* MasonryTests */,
+				2CAB06161C56822400175074 /* MasonryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,12 +497,12 @@
 /* Begin PBXTargetDependency section */
 		2CAB060E1C56822400175074 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2CAB05F21C56822400175074 /* Masonry111 */;
+			target = 2CAB05F21C56822400175074 /* Masonry */;
 			targetProxy = 2CAB060D1C56822400175074 /* PBXContainerItemProxy */;
 		};
 		2CAB06191C56822400175074 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2CAB05F21C56822400175074 /* Masonry111 */;
+			target = 2CAB05F21C56822400175074 /* Masonry */;
 			targetProxy = 2CAB06181C56822400175074 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -617,7 +618,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.masonry;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Masonry;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -633,7 +634,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.masonry;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Masonry;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -646,8 +647,8 @@
 				INFOPLIST_FILE = Masonry111Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.Masonry111Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Masonry111.app/Masonry111";
+				PRODUCT_NAME = Masonry;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Masonry.app/Masonry";
 			};
 			name = Debug;
 		};
@@ -659,8 +660,8 @@
 				INFOPLIST_FILE = Masonry111Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.Masonry111Tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Masonry111.app/Masonry111";
+				PRODUCT_NAME = Masonry;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Masonry.app/Masonry";
 			};
 			name = Release;
 		};
@@ -671,7 +672,7 @@
 				INFOPLIST_FILE = Masonry111UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.Masonry111UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Masonry;
 				TEST_TARGET_NAME = Masonry111;
 				USES_XCTRUNNER = YES;
 			};
@@ -684,7 +685,7 @@
 				INFOPLIST_FILE = Masonry111UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.Masonry111UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Masonry;
 				TEST_TARGET_NAME = Masonry111;
 				USES_XCTRUNNER = YES;
 			};
@@ -693,7 +694,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CAB05EE1C56822400175074 /* Build configuration list for PBXProject "Masonry111" */ = {
+		2CAB05EE1C56822400175074 /* Build configuration list for PBXProject "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CAB061E1C56822400175074 /* Debug */,
@@ -702,7 +703,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CAB06201C56822400175074 /* Build configuration list for PBXNativeTarget "Masonry111" */ = {
+		2CAB06201C56822400175074 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CAB06211C56822400175074 /* Debug */,
@@ -711,7 +712,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CAB06231C56822400175074 /* Build configuration list for PBXNativeTarget "Masonry111Tests" */ = {
+		2CAB06231C56822400175074 /* Build configuration list for PBXNativeTarget "MasonryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CAB06241C56822400175074 /* Debug */,
@@ -720,7 +721,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CAB06261C56822400175074 /* Build configuration list for PBXNativeTarget "Masonry111UITests" */ = {
+		2CAB06261C56822400175074 /* Build configuration list for PBXNativeTarget "MasonryUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CAB06271C56822400175074 /* Debug */,
