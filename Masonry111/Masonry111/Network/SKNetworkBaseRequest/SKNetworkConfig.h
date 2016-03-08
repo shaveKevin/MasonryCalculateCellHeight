@@ -10,14 +10,20 @@
 
 @interface SKNetworkConfig : NSObject
 
-
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 + (SKNetworkConfig *)shareInstance;
 
 /**
  *  基础接口
  */
-
 @property (nonatomic, copy) NSString *baseUrl;
+/**
+ *  <#Description#>
+ */
 @property (nonatomic, copy) NSString *cdnUrl;
 
 @end

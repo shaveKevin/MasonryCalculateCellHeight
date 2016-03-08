@@ -12,35 +12,38 @@
 
 @interface SKNetworkAgent : NSObject
 /**
- *  <#Description#>
+ *  单例
  *
- *  @return <#return value description#>
+ *  @return singleton
  */
-+(SKNetworkAgent *)sharedInstance;
++ (SKNetworkAgent *)sharedInstance;
 /**
- *  <#Description#>
+ *  添加网络请求  同步或者异步
  *
- *  @param request <#request description#>
- *  @param async   <#async description#>
+ *  @param request
+ *  @param async   add networkrequest which will be  async  or sync
  */
 - (void)addRequest:(SKNetworkBaseRequest *)request async:(BOOL)async;
 /**
- *  <#Description#>
+ *  取消一个请求
  *
- *  @param request <#request description#>
+ *  @param request cancel  one request
  */
 - (void)cancleRequest:(SKNetworkBaseRequest *)request;
 /**
- *  <#Description#>
+ *  取消所有请求
+ *
+ *  @param request cancel  all requests
  */
 - (void)cancleAllRequest;
 /**
- *  <#Description#>
+ *  构建网络请求体
  *
- *  @param request <#request description#>
+ *  @param request  the  request which should be bulit
  *
- *  @return <#return value description#>
+ *  @return build   network  method
  */
 - (NSString *)buildRequestUrl:(SKNetworkBaseRequest *)request;
+
 
 @end

@@ -33,55 +33,115 @@ static CGFloat const timeOutInterval = 60.0f;
 - (void)cacheCompleteFilter {
     
 }
+/**
+ *  <#Description#>
+ */
 - (void)requestSuccessCompleteFilter {
     
 }
+/**
+ *  <#Description#>
+ */
 - (void)requestFailureFilter {
     
 }
-
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSString *)requestUrl {
     
     return _requestUrl;
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSString *)cdnUrl {
     
     return _cdnUrl;
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSString *)baseUrl {
     
     return _baseUrl;
 }
-
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSTimeInterval)requestTimeoutInterval {
     
     return _requestTimeoutInterval;
     
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (id)requestArgument {
     
     return _requestArgument;
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (SKNetworkRequestMethod)requestMethod {
     
     return _requestMethod;
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (SKNetworkRequestSerializerType)requestSerializerType {
     
     return _requestSerializerType;
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 
 - (NSArray *)requestAuthorizationHeaderFieldArray {
     return _requestAuthorizationHeaderFieldArray;
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSDictionary *)requestHeaderFieldValueDictionary {
     return _requestHeaderFieldValueDictionary;
 }
+/**
+ *
+ *
+ *  @return <#return value description#>
+ */
 - (BOOL)useCDN {
     
     return _useCDN;
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (BOOL)statusCodeValidator {
+    
     NSInteger statusCode = [self responseStatusCode];
     if (statusCode >= 200 && statusCode <= 299) {
         return YES;
@@ -89,6 +149,11 @@ static CGFloat const timeOutInterval = 60.0f;
         return NO;
     }
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 
 - (AFConstructingBlock)constructingBodyBlock {
     return nil;

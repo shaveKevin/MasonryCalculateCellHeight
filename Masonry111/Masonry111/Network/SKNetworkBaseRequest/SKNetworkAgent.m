@@ -11,11 +11,24 @@
 #import "SKNetworkConfig.h"
 
 @implementation SKNetworkAgent {
-    
+    /**
+     *  <#Description#>
+     */
     AFHTTPRequestOperationManager *_manager;
+    /**
+     *  <#Description#>
+     */
     SKNetworkConfig *_config;
+    /**
+     *  <#Description#>
+     */
     NSMutableDictionary *_requestRecord;
 }
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 
 + (SKNetworkAgent *)sharedInstance {
     
@@ -26,7 +39,11 @@
     });
     return shareInstance;
 }
-
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (instancetype)init {
     
     if (self = [super init]) {

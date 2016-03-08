@@ -9,18 +9,26 @@
 #import "SKNetworkConfig.h"
 
 @implementation SKNetworkConfig
-
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 + (SKNetworkConfig *)shareInstance {
     
     static SKNetworkConfig *shareManager = nil;
-    static   dispatch_once_t  predicate;
-    dispatch_once(&predicate, ^{
+    static   dispatch_once_t  onceToken;
+    dispatch_once(&onceToken, ^{
         
         shareManager = [[SKNetworkConfig alloc]init];
     });
     return shareManager;
 }
-
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 - (NSString *)baseUrl {
     
     return nil;
