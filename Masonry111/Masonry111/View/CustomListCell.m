@@ -187,8 +187,6 @@ static NSInteger const kDefaultFactor = 6;
 
         }];
         
-
-        
     }
     else  {
         //处理有图的情况这里往往要把改动的约束加上。因为第一次的高不一定是我们想要的。

@@ -7,7 +7,7 @@
 //
 
 #import "NewsViewController.h"
-
+#import "AFNetworking.h"
 @interface NewsViewController ()
 
 @end

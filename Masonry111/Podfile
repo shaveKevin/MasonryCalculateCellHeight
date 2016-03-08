@@ -6,7 +6,7 @@ use_frameworks!
 target 'Masonry111' do
     
 pod 'Masonry', '~> 0.6.3'
-pod 'AFNetworking', '~> 3.0.4'
+pod 'AFNetworking', '~> 2.6.3'
 
 end
 
