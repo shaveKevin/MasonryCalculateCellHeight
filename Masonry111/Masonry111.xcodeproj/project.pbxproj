@@ -17,6 +17,7 @@
 		2C9B527F1C8ED3AD001F545F /* SKNetworkBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B527B1C8ED3AD001F545F /* SKNetworkBaseRequest.m */; };
 		2C9B52801C8ED3AD001F545F /* SKNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B527D1C8ED3AD001F545F /* SKNetworkConfig.m */; };
 		2C9B52AC1C8ED4DC001F545F /* SKNetworkStatic_request.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B52AB1C8ED4DC001F545F /* SKNetworkStatic_request.m */; };
+		2C9B52AF1C8EE9B3001F545F /* SKNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B52AE1C8EE9B3001F545F /* SKNetworkRequest.m */; };
 		2CAB05F81C56822400175074 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB05F71C56822400175074 /* main.m */; };
 		2CAB05FB1C56822400175074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB05FA1C56822400175074 /* AppDelegate.m */; };
 		2CAB06011C56822400175074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAB05FF1C56822400175074 /* Main.storyboard */; };
@@ -63,6 +64,8 @@
 		2C9B527D1C8ED3AD001F545F /* SKNetworkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkConfig.m; sourceTree = "<group>"; };
 		2C9B52AA1C8ED4DC001F545F /* SKNetworkStatic_request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkStatic_request.h; sourceTree = "<group>"; };
 		2C9B52AB1C8ED4DC001F545F /* SKNetworkStatic_request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkStatic_request.m; sourceTree = "<group>"; };
+		2C9B52AD1C8EE9B3001F545F /* SKNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkRequest.h; sourceTree = "<group>"; };
+		2C9B52AE1C8EE9B3001F545F /* SKNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkRequest.m; sourceTree = "<group>"; };
 		2CAB05F31C56822400175074 /* Masonry111.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masonry111.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAB05F71C56822400175074 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CAB05F91C56822400175074 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				2C9B527B1C8ED3AD001F545F /* SKNetworkBaseRequest.m */,
 				2C9B527C1C8ED3AD001F545F /* SKNetworkConfig.h */,
 				2C9B527D1C8ED3AD001F545F /* SKNetworkConfig.m */,
+				2C9B52AD1C8EE9B3001F545F /* SKNetworkRequest.h */,
+				2C9B52AE1C8EE9B3001F545F /* SKNetworkRequest.m */,
 			);
 			path = SKNetworkBaseRequest;
 			sourceTree = "<group>";
@@ -518,6 +523,7 @@
 				2C4E59771C89860E00E967C2 /* NewsListCell.m in Sources */,
 				2C9B52AC1C8ED4DC001F545F /* SKNetworkStatic_request.m in Sources */,
 				2C9B52801C8ED3AD001F545F /* SKNetworkConfig.m in Sources */,
+				2C9B52AF1C8EE9B3001F545F /* SKNetworkRequest.m in Sources */,
 				2CAB05FB1C56822400175074 /* AppDelegate.m in Sources */,
 				2C9B527F1C8ED3AD001F545F /* SKNetworkBaseRequest.m in Sources */,
 				2C4E597D1C89861700E967C2 /* NewsViewController.m in Sources */,

@@ -8,34 +8,52 @@
 
 #import "SKNetworkStatic_request.h"
 
-@implementation SKNetworkStatic_request
+static NSString *const staticAPI = @"http://m.aipai.com/mobile/xifen/collect_menuid-3_appver-a2.3.0_page-1.html";
 
+@implementation SKNetworkStatic_request
+/**
+ *  <#Description#>
+ *
+ *  @return <#return value description#>
+ */
 
 - (NSString *)requestUrl {
     
-    return @"http://m.aipai.com/mobile/xifen/collect_menuid-3_appver-a2.3.0_page-1.html";
+    return staticAPI;
 }
-
+/**
+ * 参数字典
+ *
+ *  @return 返回参数字典
+ */
 - (id)requestArgument {
     
     NSDictionary *dictParame = nil;
     return dictParame;
 }
-
+/**
+ *  请求方式 默认Get
+ *
+ *  @return <#return value description#>
+ */
 - (SKNetworkRequestMethod)requestMethod {
     
     return SKNetworkRequestMethodGet;
 }
-
-- (NSTimeInterval)requestTimeoutInterval{
-    return 6.0f;
+/**
+ *  如果是post 请求需要重载下面的方法 默认的是 http
+ *
+ *  @return <#return value description#>
+ */
+/*
+- (SKNetworkRequestSerializerType)requestSerializerType {
+    
+    return SKNetworkRequestSerializerTypeJson;
 }
-
-/// 请求成功
-- (void)requestSuccessCompleteFilter {
-    [self dealWithData];
-}
-
+ */
+/**
+ *  需要重载这里对model赋值。可以使用模型化  yymodel  jsonmodel   mantle   等等
+ */
 - (void)dealWithData {
     NSString *responseString = [self responseString];
     NSData *data = [responseString dataUsingEncoding:NSUTF8StringEncoding];

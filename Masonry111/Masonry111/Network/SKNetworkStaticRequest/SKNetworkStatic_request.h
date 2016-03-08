@@ -6,8 +6,9 @@
 //  Copyright © 2016年 shavekevin. All rights reserved.
 //
 
-#import "SKNetworkBaseRequest.h"
 
-@interface SKNetworkStatic_request : SKNetworkBaseRequest
+#import "SKNetworkRequest.h"
+
+@interface SKNetworkStatic_request : SKNetworkRequest
 
 @end
