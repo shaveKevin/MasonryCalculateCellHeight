@@ -18,11 +18,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bhB-Tk-0Wx"/>
+                    <navigationItem key="navigationItem" id="bhB-Tk-0Wx">
+                        <barButtonItem key="rightBarButtonItem" title="跳转" style="plain" id="eRR-1c-0u4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="o0t-7a-7oc">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="跳转"/>
+                                <connections>
+                                    <action selector="gotoNetworkVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYf-tR-vUv"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="Uoa-cb-jH4" kind="show" id="ecX-Up-Hf4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="322"/>
+            <point key="canvasLocation" x="751" y="573"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="oU0-S5-Hpf">
+            <objects>
+                <viewController id="Uoa-cb-jH4" customClass="NewsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0BM-N0-kE5"/>
+                        <viewControllerLayoutGuide type="bottom" id="0R9-0O-KQd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gSu-uU-3eg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTf-fm-QxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="573"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ju-Oa-5z1">

@@ -18,7 +18,6 @@ static CGFloat const timeOutInterval = 60.0f;
 - (instancetype)init {
     
     if (self= [super init]) {
-        
         _requestUrl = @"";
         _cdnUrl = @"";
         _baseUrl = @"";
@@ -26,7 +25,7 @@ static CGFloat const timeOutInterval = 60.0f;
         _requestMethod = SKNetworkRequestMethodGet;
         _requestSerializerType = SKNetworkRequestSerializerTypeHttp;
         _useCDN = NO;
-        
+        _dataArray =[NSMutableArray array];
     }
     return self;
 }

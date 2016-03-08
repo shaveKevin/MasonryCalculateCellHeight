@@ -7,9 +7,10 @@
 //
 
 #import "NewsViewController.h"
-#import "AFNetworking.h"
-@interface NewsViewController ()
+#import "SKNetworkStatic_request.h"
 
+@interface NewsViewController ()
+@property (nonatomic, strong) SKNetworkStatic_request *request;
 @end
 
 @implementation NewsViewController
@@ -17,8 +18,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self getData];
+    
+    
 }
 
+- (void)getData{
+    
+    if (_request) {
+        
+        [_request stop];
+        _request  = nil;
+        
+    }
+    _request = [[SKNetworkStatic_request alloc]init];
+    
+    [_request asyncStartWithCompletionBlockWithSuccess:^(SKNetworkBaseRequest *request) {
+        
+        SKNetworkStatic_request *requsetStatic = (SKNetworkStatic_request *)request;
+        NSLog(@"%lu",(unsigned long)requsetStatic.dataArray.count);
+        
+    } failure:^(SKNetworkBaseRequest *request) {
+        //
+    } cache:^(SKNetworkBaseRequest *request) {
+        
+    }];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

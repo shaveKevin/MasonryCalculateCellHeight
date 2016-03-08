@@ -13,9 +13,10 @@
 		2C4E59771C89860E00E967C2 /* NewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E59751C89860E00E967C2 /* NewsListCell.m */; };
 		2C4E597D1C89861700E967C2 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E597A1C89861700E967C2 /* NewsViewController.m */; };
 		2C4E597E1C89861700E967C2 /* StaticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4E597C1C89861700E967C2 /* StaticViewController.m */; };
-		2C9B52701C8E9BE9001F545F /* SKNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B526F1C8E9BE9001F545F /* SKNetworkConfig.m */; };
-		2C9B52731C8EA1EC001F545F /* SKNetworkBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B52721C8EA1EC001F545F /* SKNetworkBaseRequest.m */; };
-		2C9B52761C8EA213001F545F /* SKNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B52751C8EA213001F545F /* SKNetworkAgent.m */; };
+		2C9B527E1C8ED3AD001F545F /* SKNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B52791C8ED3AD001F545F /* SKNetworkAgent.m */; };
+		2C9B527F1C8ED3AD001F545F /* SKNetworkBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B527B1C8ED3AD001F545F /* SKNetworkBaseRequest.m */; };
+		2C9B52801C8ED3AD001F545F /* SKNetworkConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B527D1C8ED3AD001F545F /* SKNetworkConfig.m */; };
+		2C9B52AC1C8ED4DC001F545F /* SKNetworkStatic_request.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C9B52AB1C8ED4DC001F545F /* SKNetworkStatic_request.m */; };
 		2CAB05F81C56822400175074 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB05F71C56822400175074 /* main.m */; };
 		2CAB05FB1C56822400175074 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAB05FA1C56822400175074 /* AppDelegate.m */; };
 		2CAB06011C56822400175074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAB05FF1C56822400175074 /* Main.storyboard */; };
@@ -54,12 +55,14 @@
 		2C4E597A1C89861700E967C2 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		2C4E597B1C89861700E967C2 /* StaticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticViewController.h; sourceTree = "<group>"; };
 		2C4E597C1C89861700E967C2 /* StaticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticViewController.m; sourceTree = "<group>"; };
-		2C9B526E1C8E9BE9001F545F /* SKNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkConfig.h; sourceTree = "<group>"; };
-		2C9B526F1C8E9BE9001F545F /* SKNetworkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkConfig.m; sourceTree = "<group>"; };
-		2C9B52711C8EA1EC001F545F /* SKNetworkBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkBaseRequest.h; sourceTree = "<group>"; };
-		2C9B52721C8EA1EC001F545F /* SKNetworkBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkBaseRequest.m; sourceTree = "<group>"; };
-		2C9B52741C8EA213001F545F /* SKNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkAgent.h; sourceTree = "<group>"; };
-		2C9B52751C8EA213001F545F /* SKNetworkAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkAgent.m; sourceTree = "<group>"; };
+		2C9B52781C8ED3AD001F545F /* SKNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkAgent.h; sourceTree = "<group>"; };
+		2C9B52791C8ED3AD001F545F /* SKNetworkAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkAgent.m; sourceTree = "<group>"; };
+		2C9B527A1C8ED3AD001F545F /* SKNetworkBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkBaseRequest.h; sourceTree = "<group>"; };
+		2C9B527B1C8ED3AD001F545F /* SKNetworkBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkBaseRequest.m; sourceTree = "<group>"; };
+		2C9B527C1C8ED3AD001F545F /* SKNetworkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkConfig.h; sourceTree = "<group>"; };
+		2C9B527D1C8ED3AD001F545F /* SKNetworkConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkConfig.m; sourceTree = "<group>"; };
+		2C9B52AA1C8ED4DC001F545F /* SKNetworkStatic_request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkStatic_request.h; sourceTree = "<group>"; };
+		2C9B52AB1C8ED4DC001F545F /* SKNetworkStatic_request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKNetworkStatic_request.m; sourceTree = "<group>"; };
 		2CAB05F31C56822400175074 /* Masonry111.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masonry111.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAB05F71C56822400175074 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CAB05F91C56822400175074 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +149,28 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		2C9B52771C8ED3AD001F545F /* SKNetworkBaseRequest */ = {
+			isa = PBXGroup;
+			children = (
+				2C9B52781C8ED3AD001F545F /* SKNetworkAgent.h */,
+				2C9B52791C8ED3AD001F545F /* SKNetworkAgent.m */,
+				2C9B527A1C8ED3AD001F545F /* SKNetworkBaseRequest.h */,
+				2C9B527B1C8ED3AD001F545F /* SKNetworkBaseRequest.m */,
+				2C9B527C1C8ED3AD001F545F /* SKNetworkConfig.h */,
+				2C9B527D1C8ED3AD001F545F /* SKNetworkConfig.m */,
+			);
+			path = SKNetworkBaseRequest;
+			sourceTree = "<group>";
+		};
+		2C9B52811C8ED44F001F545F /* SKNetworkStaticRequest */ = {
+			isa = PBXGroup;
+			children = (
+				2C9B52AA1C8ED4DC001F545F /* SKNetworkStatic_request.h */,
+				2C9B52AB1C8ED4DC001F545F /* SKNetworkStatic_request.m */,
+			);
+			path = SKNetworkStaticRequest;
+			sourceTree = "<group>";
+		};
 		2CAB05EA1C56822400175074 = {
 			isa = PBXGroup;
 			children = (
@@ -196,12 +221,8 @@
 		2CC8BB771C8DA59A0047AD93 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2C9B52741C8EA213001F545F /* SKNetworkAgent.h */,
-				2C9B52751C8EA213001F545F /* SKNetworkAgent.m */,
-				2C9B526E1C8E9BE9001F545F /* SKNetworkConfig.h */,
-				2C9B526F1C8E9BE9001F545F /* SKNetworkConfig.m */,
-				2C9B52711C8EA1EC001F545F /* SKNetworkBaseRequest.h */,
-				2C9B52721C8EA1EC001F545F /* SKNetworkBaseRequest.m */,
+				2C9B52811C8ED44F001F545F /* SKNetworkStaticRequest */,
+				2C9B52771C8ED3AD001F545F /* SKNetworkBaseRequest */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -493,13 +514,14 @@
 			files = (
 				2C4E59701C89860300E967C2 /* YYFPSLabel.m in Sources */,
 				2C4E597E1C89861700E967C2 /* StaticViewController.m in Sources */,
-				2C9B52701C8E9BE9001F545F /* SKNetworkConfig.m in Sources */,
+				2C9B527E1C8ED3AD001F545F /* SKNetworkAgent.m in Sources */,
 				2C4E59771C89860E00E967C2 /* NewsListCell.m in Sources */,
+				2C9B52AC1C8ED4DC001F545F /* SKNetworkStatic_request.m in Sources */,
+				2C9B52801C8ED3AD001F545F /* SKNetworkConfig.m in Sources */,
 				2CAB05FB1C56822400175074 /* AppDelegate.m in Sources */,
-				2C9B52731C8EA1EC001F545F /* SKNetworkBaseRequest.m in Sources */,
+				2C9B527F1C8ED3AD001F545F /* SKNetworkBaseRequest.m in Sources */,
 				2C4E597D1C89861700E967C2 /* NewsViewController.m in Sources */,
 				2C4E59761C89860E00E967C2 /* CustomListCell.m in Sources */,
-				2C9B52761C8EA213001F545F /* SKNetworkAgent.m in Sources */,
 				2CAB05F81C56822400175074 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

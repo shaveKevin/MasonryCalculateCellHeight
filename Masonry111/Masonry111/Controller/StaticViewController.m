@@ -10,6 +10,7 @@
 #import "Masonry.h"
 #import "CustomListCell.h"
 #import "YYFPSLabel.h"
+#import "NewsViewController.h"
 
 static  NSString *const cellIdentifier = @"cell";
 #define PhoneBounds [UIScreen mainScreen].bounds
@@ -21,6 +22,10 @@ static  NSString *const cellIdentifier = @"cell";
 @end
 
 @implementation StaticViewController
+- (IBAction)gotoNetworkVC:(id)sender {
+    NewsViewController *newsVC = [[NewsViewController alloc]init];
+    [self.navigationController pushViewController:newsVC animated:YES];
+}
 
 - (UITableView *)tableView {
     
