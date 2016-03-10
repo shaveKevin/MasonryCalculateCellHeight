@@ -186,7 +186,7 @@ Use this method to force the layout of subviews before drawing. Using the view t
 
 Additoions:
 
-ios layout机制相关方法
+iOS layout机制相关方法(转)
 
 - (CGSize)sizeThatFits:(CGSize)size
 - (void)sizeToFit
