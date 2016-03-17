@@ -94,6 +94,9 @@ cell.contentView.frame = cell.frame;
 ```
 在iOS8以后添加了这两行代码我们就不用在实现heightForRowAtIndexPath 这个方法了。系统会帮我们计算好并返回高度。
 
+# 值得注意的是：在cell的高度变化特别大的时候 慎用estimatedRowHeight  预估高度的方法，因为如果高度差别太大的话 界面会因为预估高度和实际高度相差太大而造成界面闪动明显。
+
+
 我们在自定义cell是怎么做的呢？
 ```
 - (void)layoutSubviews {
