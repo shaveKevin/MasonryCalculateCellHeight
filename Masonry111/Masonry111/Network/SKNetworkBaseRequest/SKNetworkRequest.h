@@ -11,6 +11,11 @@
 @interface SKNetworkRequest : SKNetworkBaseRequest
 
 /**
+ *  参数字典
+ */
+@property (nonatomic,strong) NSDictionary *dicParame;
+
+/**
  *  请求成功处理数据
  */
 - (void)dealWithData;

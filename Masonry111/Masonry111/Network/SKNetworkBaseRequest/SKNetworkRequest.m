@@ -20,6 +20,15 @@
 - (NSTimeInterval)requestTimeoutInterval{
     return 6.0f;
 }
+/**
+ * 参数字典
+ *
+ *  @return 返回参数字典
+ */
+- (id)requestArgument {
+    
+    return _dicParame;
+}
 
 // 重载
 

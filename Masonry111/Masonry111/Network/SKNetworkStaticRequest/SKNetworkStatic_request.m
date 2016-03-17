@@ -21,16 +21,7 @@ static NSString *const staticAPI = @"http://m.aipai.com/mobile/xifen/collect_men
     
     return staticAPI;
 }
-/**
- * 参数字典
- *
- *  @return 返回参数字典
- */
-- (id)requestArgument {
-    
-    NSDictionary *dictParame = nil;
-    return dictParame;
-}
+
 /**
  *  请求方式 默认Get
  *
