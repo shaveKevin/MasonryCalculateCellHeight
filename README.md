@@ -1,6 +1,6 @@
 # MasonryCalculateCellHeight
-masonry和storyboard高度自适应  目前只实现了masonry 来实现tableviewcell 高度自适应
-###使用storyboard和masonry来实现自适应cell动态高度。
+实现了masonry 来实现tableviewcell 高度自适应
+###使用masonry来实现自适应cell动态高度。
 
 #本次更新说明
 
