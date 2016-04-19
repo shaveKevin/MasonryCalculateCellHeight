@@ -1,6 +1,6 @@
 //
 //  SKBaseTableViewCell.m
-//  Masonry111
+//  Masonry
 //
 //  Created by shavekevin on 16/4/19.
 //  Copyright © 2016年 shavekevin. All rights reserved.
@@ -17,6 +17,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        //这个加上是为了解决约束冲突
         self.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds));
         self.contentView.frame = self.frame;
     }

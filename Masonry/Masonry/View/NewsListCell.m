@@ -1,6 +1,6 @@
 //
 //  NewsListCell.m
-//  Masonry111
+//  Masonry
 //
 //  Created by shavekevin on 16/3/4.
 //  Copyright © 2016年 shavekevin. All rights reserved.

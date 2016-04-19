@@ -1,6 +1,6 @@
 //
 //  CustomListCell.m
-//  Masonry111
+//  Masonry
 //
 //  Created by shavekevin on 16/1/26.
 //  Copyright © 2016年 shavekevin. All rights reserved.
@@ -51,9 +51,6 @@ static NSInteger const kDefaultFactor = 6;
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //这个加上是为了解决约束冲突
-        self.frame = CGRectMake(0, 0, CGRectGetWidth(PhoneBounds), CGRectGetHeight(PhoneBounds));
-        self.contentView.frame = self.frame;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         _isFirstVisit = NO;
     }

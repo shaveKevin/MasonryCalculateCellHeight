@@ -36,13 +36,6 @@
 			remoteGlobalIDString = 2CAB05F21C56822400175074;
 			remoteInfo = Masonry111;
 		};
-		2CAB06181C56822400175074 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2CAB05EB1C56822400175074 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2CAB05F21C56822400175074;
-			remoteInfo = Masonry111;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +72,6 @@
 		2C0B447F1CC5DE820000F081 /* SKBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBaseTableViewCell.m; sourceTree = "<group>"; };
 		2CAB05F31C56822400175074 /* Masonry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masonry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAB060C1C56822400175074 /* Masonry.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CAB06171C56822400175074 /* Masonry.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7F8973C587BD920B9465B6 /* Pods_Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCBB08D42BDB778A3A4500B8 /* Pods-Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Masonry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Masonry/Pods-Masonry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,13 +86,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2CAB06091C56822400175074 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2CAB06141C56822400175074 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,7 +195,6 @@
 			children = (
 				2CAB05F31C56822400175074 /* Masonry.app */,
 				2CAB060C1C56822400175074 /* Masonry.xctest */,
-				2CAB06171C56822400175074 /* Masonry.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,26 +260,6 @@
 			productReference = 2CAB060C1C56822400175074 /* Masonry.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2CAB06161C56822400175074 /* MasonryUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2CAB06261C56822400175074 /* Build configuration list for PBXNativeTarget "MasonryUITests" */;
-			buildPhases = (
-				6AA9FEE847FF212466B00943 /* Check Pods Manifest.lock */,
-				2CAB06131C56822400175074 /* Sources */,
-				2CAB06141C56822400175074 /* Frameworks */,
-				2CAB06151C56822400175074 /* Resources */,
-				92EA2EC4EDBFB11507EF9F22 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2CAB06191C56822400175074 /* PBXTargetDependency */,
-			);
-			name = MasonryUITests;
-			productName = Masonry111UITests;
-			productReference = 2CAB06171C56822400175074 /* Masonry.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -311,10 +275,6 @@
 						DevelopmentTeam = YB5R6DKEEP;
 					};
 					2CAB060B1C56822400175074 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 2CAB05F21C56822400175074;
-					};
-					2CAB06161C56822400175074 = {
 						CreatedOnToolsVersion = 7.2;
 						TestTargetID = 2CAB05F21C56822400175074;
 					};
@@ -335,7 +295,6 @@
 			targets = (
 				2CAB05F21C56822400175074 /* Masonry */,
 				2CAB060B1C56822400175074 /* MasonryTests */,
-				2CAB06161C56822400175074 /* MasonryUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,13 +313,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2CAB060A1C56822400175074 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2CAB06151C56822400175074 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,21 +352,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Masonry/Pods-Masonry-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6AA9FEE847FF212466B00943 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		886B305E51ED2EC1AF6E0C81 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,21 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		92EA2EC4EDBFB11507EF9F22 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Masonry111UITests/Pods-Masonry111UITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9A5FE9306D90440A7D8CFD1F /* Embed Pods Frameworks */ = {
@@ -520,13 +442,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2CAB06131C56822400175074 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -534,11 +449,6 @@
 			isa = PBXTargetDependency;
 			target = 2CAB05F21C56822400175074 /* Masonry */;
 			targetProxy = 2CAB060D1C56822400175074 /* PBXContainerItemProxy */;
-		};
-		2CAB06191C56822400175074 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2CAB05F21C56822400175074 /* Masonry */;
-			targetProxy = 2CAB06181C56822400175074 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -676,7 +586,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Masonry111Tests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Masonry/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.Masonry111Tests;
 				PRODUCT_NAME = Masonry;
@@ -688,35 +598,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = Masonry111Tests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Masonry/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.Masonry111Tests;
 				PRODUCT_NAME = Masonry;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Masonry.app/Masonry";
-			};
-			name = Release;
-		};
-		2CAB06271C56822400175074 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = Masonry111UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.Masonry111UITests;
-				PRODUCT_NAME = Masonry;
-				TEST_TARGET_NAME = Masonry111;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		2CAB06281C56822400175074 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = Masonry111UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shavekevin.Masonry111UITests;
-				PRODUCT_NAME = Masonry;
-				TEST_TARGET_NAME = Masonry111;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -746,15 +632,6 @@
 			buildConfigurations = (
 				2CAB06241C56822400175074 /* Debug */,
 				2CAB06251C56822400175074 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2CAB06261C56822400175074 /* Build configuration list for PBXNativeTarget "MasonryUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2CAB06271C56822400175074 /* Debug */,
-				2CAB06281C56822400175074 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  Masonry111
+//  Masonry
 //
 //  Created by shavekevin on 16/1/26.
 //  Copyright © 2016年 shavekevin. All rights reserved.
@@ -40,7 +40,6 @@ static  NSString *const cellIdentifier = @"cell";
             make.edges.insets(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
         
-        
     }
     return _tableView;
 }
@@ -55,23 +54,27 @@ static  NSString *const cellIdentifier = @"cell";
     YYFPSLabel *label = [YYFPSLabel new];
     label.frame = CGRectMake((CGRectGetWidth(PhoneBounds)- 100)/2.0f, 0, 100, 30);
     [self.navigationController.navigationBar  addSubview:label];
-    //[self addHeaderView];
+    [self addHeaderView];
 }
 
-//TableviewHeaderview不可以被加约束可是它的子视图可以加约束 这里给一个高度就好
+//TableviewHeaderview不可以被加约束可是它的子视图可以加约束 这里给获取一个高度就好 添加footview   添加区头区尾 也是同样的方法
 - (void)addHeaderView {
     
+    //headerview
     UIView *viewContview = [UIView new];
-    viewContview.frame = CGRectMake(0, 0, 0, 100);
     viewContview.backgroundColor = [UIColor clearColor];
-    self.tableView.tableHeaderView = viewContview;
-
     UIView *viewCss = [UIView new];
     [viewContview addSubview:viewCss];
     viewCss.backgroundColor = [UIColor orangeColor];
     [viewCss mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.insets(UIEdgeInsetsZero);
+        make.height.mas_equalTo(100);
     }];
+    CGFloat height = [viewContview systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    CGRect frame = viewContview.frame;
+    frame.size.height = height;
+    viewContview.frame = frame;
+    self.tableView.tableHeaderView = viewContview;
     
 }
 
@@ -127,7 +130,7 @@ static  NSString *const cellIdentifier = @"cell";
     return [self.tempCell calculateHeightWithModel:_dataArray[indexPath.row]];
 
 }
-//懒加载一个cell 用于计算高度(从重用池中取出)
+//懒加载一个cell 用于计算高度(从重用池中取出)  这里建议用dispatch once 来写。
 - (CustomListCell *)tempCell {
     
     if (!_tempCell) {
