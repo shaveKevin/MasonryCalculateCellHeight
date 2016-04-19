@@ -1,5 +1,5 @@
-# MasonryStoryboardCellHeight
-masonry和storyboard高度自适应
+# MasonryCalculateCellHeight
+masonry和storyboard高度自适应  目前只实现了masonry 来实现tableviewcell 高度自适应
 ###使用storyboard和masonry来实现自适应cell动态高度。
 
 #本次更新说明
@@ -29,7 +29,9 @@ masonry和storyboard高度自适应
 }
 ```
 然后我们就在tableview的代理方法中可以这样写
+之前：
 ```
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //在前面已经注册过cell了 所以这里直接deq
     CustomListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -41,6 +43,18 @@ masonry和storyboard高度自适应
     [cell setNeedsUpdateConstraints];
     [cell updateConstraintsIfNeeded];
 
+    return cell;
+}
+```
+现在：
+```
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CustomListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    //这里的操作是对cell上的子view 根据数据源 添加 更新约束
+    [cell customListBlindCell: _dataArray[indexPath.row]];
+    [cell  layOutViews];
     return cell;
 }
 ```
@@ -74,6 +88,7 @@ cell.contentView.frame = cell.frame;
  ```
  在heightforrow里面执行如下操作
  
+ 之前：
  
  ```
  
@@ -92,6 +107,15 @@ cell.contentView.frame = cell.frame;
  ##1.本次更新新加了UITableview子类 在子类里做的操作是
  
  ```
+ - (void)layOutViews {
+    
+    //这个加上是为了解决约束冲突
+    self.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds));
+    self.contentView.frame = self.frame;
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+}
+
  - (CGFloat)calculateHeight{
     
     [self setNeedsUpdateConstraints];
@@ -103,6 +127,8 @@ cell.contentView.frame = cell.frame;
 
 ```
  把计算高度的操作放到父类里。 然后子类中调用。现在的cell 里返回高度是这样写的
+ 现在：
+ 
  ```
  - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -201,7 +227,7 @@ cell.contentView.frame = cell.frame;
 ```
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //这个加上是为了解决约束冲突
+        //这个加上是为了解决约束冲突  这个目前已经放到父类去写了 
         self.frame = CGRectMake(0, 0, CGRectGetWidth(PhoneBounds), CGRectGetHeight(PhoneBounds));
         self.contentView.frame = self.frame;
         _isFirstVisit = NO;
