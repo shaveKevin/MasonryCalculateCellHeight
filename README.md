@@ -5,6 +5,7 @@ masonry和storyboard高度自适应
 #本次更新说明
 
 1.本次更新新加了UITableview子类  使在vc里调用高度的方法更简单。
+
 2. 新增了对tableview 的子视图 添加约束的方法
 
 先讲一下使用masonry来自适应cell高度
