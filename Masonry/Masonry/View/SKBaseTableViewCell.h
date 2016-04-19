@@ -15,5 +15,8 @@
  *  @return cell的高度
  */
 - (CGFloat)calculateHeight;
-
+/**
+ *  通过约束对cell 进行布局 赋值完成之后进行布局
+ */
+- (void)layOutViews;
 @end

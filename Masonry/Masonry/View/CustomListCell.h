@@ -22,7 +22,13 @@
  *  @param dataSource 数据源
  */
 - (void)customListBlindCell:(id)dataSource;
-
+/**
+ *  执行父类的方法获取cell高度
+ *
+ *  @param model 数据源
+ *
+ *  @return cell高度
+ */
 - (CGFloat)calculateHeightWithModel:(id)model;
 
 

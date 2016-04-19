@@ -83,22 +83,13 @@ static  NSString *const cellIdentifier = @"cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CustomListCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    //这个加上是为了解决约束冲突
-    cell.frame = CGRectMake(0, 0, CGRectGetWidth(PhoneBounds), CGRectGetHeight(PhoneBounds));
-    cell.contentView.frame = cell.frame;
     [cell customListBlindCell: _dataArray[indexPath.row]];
     cell.reloadTableviewBlock = ^(){
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         NSLog(@"reloadData  reloadData");
     };
-    /**
-     *  下面这两行是布局用 如果不写   约束没加载。视图为空 因为约束的添加是在updateconstraints 里的
-     */
-    
-    [cell setNeedsUpdateConstraints];
-    [cell updateConstraintsIfNeeded];
-   
-
+    //这里的操作是对cell上的子view 根据数据源 添加 更新约束
+    [cell  layOutViews];
     return cell;
 }
 

@@ -23,7 +23,24 @@
     }
     return self;
 }
+/**
+ *  下面这两行是布局用 如果不写   约束没加载。视图为空 因为约束的添加是在updateconstraints 里的
+ */
 
+- (void)layOutViews {
+    
+    //这个加上是为了解决约束冲突
+    self.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds));
+    self.contentView.frame = self.frame;
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+}
+
+/**
+ *  高度计算
+ *
+ *  @return cell 高
+ */
 - (CGFloat)calculateHeight{
     
     [self setNeedsUpdateConstraints];
