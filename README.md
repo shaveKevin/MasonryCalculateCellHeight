@@ -2,6 +2,11 @@
 masonry和storyboard高度自适应
 ###使用storyboard和masonry来实现自适应cell动态高度。
 
+#本次更新说明
+
+1.本次更新新加了UITableview子类  使在vc里调用高度的方法更简单。
+2. 新增了对tableview 的子视图 添加约束的方法
+
 先讲一下使用masonry来自适应cell高度
 
 首先，这里采用的是使用懒加载来加载控件。
@@ -80,9 +85,65 @@ cell.contentView.frame = cell.frame;
     [self.tempCell layoutIfNeeded];
     return [self.tempCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1 ;
 }
+
 ```
+#更新说明
+ ##1.本次更新新加了UITableview子类 在子类里做的操作是
+ 
+ ```
+ - (CGFloat)calculateHeight{
+    
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1;
+}
 
+```
+ 把计算高度的操作放到父类里。 然后子类中调用。现在的cell 里返回高度是这样写的
+ ```
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 
+    //从重用池取出去的cell 然后对cell进行赋值 通过赋值 来调用是否更新约束的方法
+    // 获得高度有两种方法： 如果子类对父类方法做了修改那么就 用方法2 如果没修改就用方法1
+    /**
+     *  1.  [self.tempCell customListBlindCell:_dataArray[indexPath.row]];
+     
+     *     [self.tempCell calculateHeight];
+
+     *  2. [self.tempCell calculateHeightWithModel:_dataArray[indexPath.row]]
+     */
+    return [self.tempCell calculateHeightWithModel:_dataArray[indexPath.row]];
+
+}
+
+ ```
+ ##2. 新增了对tableview 的子视图 添加约束的方法
+ 
+ TableviewHeaderview不可以被加约束可是它的子视图可以加约束 这里给获取一个高度就好 添加footview   添加区头区尾 也是同样的方法
+ ```
+ - (void)addHeaderView {
+    
+    //headerview
+    UIView *viewContview = [UIView new];
+    viewContview.backgroundColor = [UIColor clearColor];
+    UIView *viewCss = [UIView new];
+    [viewContview addSubview:viewCss];
+    viewCss.backgroundColor = [UIColor orangeColor];
+    [viewCss mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+        make.height.mas_equalTo(100);
+    }];
+    CGFloat height = [viewContview systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    CGRect frame = viewContview.frame;
+    frame.size.height = height;
+    viewContview.frame = frame;
+    self.tableView.tableHeaderView = viewContview;
+    
+}
+ ```
 //在iOS7的时候我们使用这样的方法来得到cell的高度 目的是让系统根据我们添加的约束来自动帮我们计算出内容的高度
 
 因为我们使用的是self.contentview所以最后得到的结果应该加上分割线1的高度。
