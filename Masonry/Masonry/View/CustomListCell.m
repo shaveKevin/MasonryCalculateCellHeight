@@ -13,8 +13,9 @@
 typedef NS_ENUM(NSInteger,ImageType) {
     
     eImageType = 0,              //.
-    eStableImageType = 1,// 图片固定 (无图)
-    eUnStableImageType = 2, //图片不固定
+    eStableImageType = 1,// 有图
+    eUnStableImageType = 2, //有图
+    
     
 };
 //这里的枚举暂时没怎么卵用。 后面写复杂的时候可能会用到
@@ -147,9 +148,11 @@ static NSInteger const kDefaultFactor = 6;
     self.contentLabel.backgroundColor = [UIColor redColor];
     self.iconImageView.backgroundColor = [UIColor blackColor];
     self.bottomView.backgroundColor = [UIColor blackColor];
-    //如果不是2的话有图 否则无图
-    if (![dataSource  isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
-         self.iconImageView.image =  [UIImage imageNamed:@"staticImage"];
+    //如果是1 或者2的话 高度固定 否则无图
+    if ([dataSource  isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
+         self.iconImageView.image =  [UIImage imageNamed:@"common.jpg"];
+    } else if ([dataSource isEqualToString:[NSString stringWithFormat:@"%ld",(long)eStableImageType]]) {
+        self.iconImageView.image =  [UIImage imageNamed:@"without.jpg"];
     }
     self.nameLabel.text = dataSource;
     self.contentLabel.text = dataSource;
@@ -159,9 +162,16 @@ static NSInteger const kDefaultFactor = 6;
 #pragma mark  - 约束的添加和更新
 - (void)updateConstraints {
     
-        [super updateConstraints];
+    [super updateConstraints];
     
     //第一次进来的话走的是make  再次进来走的是update 或者 remake
+    /**
+     *  这里为什么不写在init方法里的原因
+     *
+     *  @param !_isFirstVisit 为什么不把创建约束写在init方法的原因是因为我们的约束有可能会根据数据源进行添加。  我们在创建的时候已经默认把所有的约束添加了。(如果界面相差太大的话 不太建议采用masonry 来进行布局 因为需要不停的更新约束)
+     *
+     *  @return view
+     */
     //这里我们在第一次的时候会把我们所有的控件约束加载一遍 这里只加载一次，然后我们需要在下面做的就是对约束进行更新
     if (!_isFirstVisit) {
         
@@ -206,20 +216,10 @@ static NSInteger const kDefaultFactor = 6;
         _isFirstVisit = YES;
     }
     //更新约束的适用范围：我们把动态的东西在这里进行更新 比如说图像的有无，label 文字的显隐等等。这里只需要做的是更新约束就好。
+    
     //处理无图的情况
-    if ([self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]) {
-
-        // 这里只需要处理特殊情况 无图 的情况  有图的 可以考虑更新图的高度之类的
-        [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentLabel.mas_bottom).offset(10);
-            make.height.mas_equalTo(kWithOutmageviewHeight);
-        }];
-        [self.expandLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.iconImageView.mas_bottom).offset(0);
-
-        }];
-    }
-    else  {
+    if ([self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eUnStableImageType]]||[self.dataSourceElement isEqualToString:[NSString stringWithFormat:@"%ld",(long)eStableImageType]]) {
+        
         //处理有图的情况这里往往要把改动的约束加上。因为第一次的高不一定是我们想要的。
         [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentLabel.mas_bottom).offset(kLeftPadding);
@@ -228,7 +228,19 @@ static NSInteger const kDefaultFactor = 6;
         [self.expandLabel mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.iconImageView.mas_bottom).offset(10);
         }];
-   
+        
+    } else {
+        
+        // 这里只需要处理特殊情况 无图 的情况  有图的 可以考虑更新图的高度之类的
+        [self.iconImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentLabel.mas_bottom).offset(10);
+            make.height.mas_equalTo(kWithOutmageviewHeight);
+        }];
+        
+        [self.expandLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.iconImageView.mas_bottom).offset(0);
+            
+        }];
     }
     
 }

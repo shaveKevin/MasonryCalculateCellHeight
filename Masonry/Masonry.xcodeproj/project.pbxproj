@@ -13,7 +13,6 @@
 		2C0B44831CC5DE820000F081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C0B445F1CC5DE820000F081 /* Main.storyboard */; };
 		2C0B44841CC5DE820000F081 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B44631CC5DE820000F081 /* NewsViewController.m */; };
 		2C0B44851CC5DE820000F081 /* StaticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B44651CC5DE820000F081 /* StaticViewController.m */; };
-		2C0B44861CC5DE820000F081 /* DataInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C0B44661CC5DE820000F081 /* DataInfo.plist */; };
 		2C0B44871CC5DE820000F081 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C0B44671CC5DE820000F081 /* Info.plist */; };
 		2C0B44881CC5DE820000F081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B44681CC5DE820000F081 /* main.m */; };
 		2C0B44891CC5DE820000F081 /* SKNetworkAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B446C1CC5DE820000F081 /* SKNetworkAgent.m */; };
@@ -25,6 +24,7 @@
 		2C0B448F1CC5DE820000F081 /* CustomListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B447B1CC5DE820000F081 /* CustomListCell.m */; };
 		2C0B44901CC5DE820000F081 /* NewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B447D1CC5DE820000F081 /* NewsListCell.m */; };
 		2C0B44911CC5DE820000F081 /* SKBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0B447F1CC5DE820000F081 /* SKBaseTableViewCell.m */; };
+		2C5AFC7C1CC70E17006BBFEE /* Datasource.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C5AFC7B1CC70E17006BBFEE /* Datasource.json */; };
 		304B53A6B5B03980C9046810 /* Pods_Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7F8973C587BD920B9465B6 /* Pods_Masonry.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,6 @@
 		2C0B44631CC5DE820000F081 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		2C0B44641CC5DE820000F081 /* StaticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticViewController.h; sourceTree = "<group>"; };
 		2C0B44651CC5DE820000F081 /* StaticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticViewController.m; sourceTree = "<group>"; };
-		2C0B44661CC5DE820000F081 /* DataInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataInfo.plist; sourceTree = "<group>"; };
 		2C0B44671CC5DE820000F081 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C0B44681CC5DE820000F081 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2C0B446B1CC5DE820000F081 /* SKNetworkAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKNetworkAgent.h; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		2C0B447D1CC5DE820000F081 /* NewsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListCell.m; sourceTree = "<group>"; };
 		2C0B447E1CC5DE820000F081 /* SKBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBaseTableViewCell.h; sourceTree = "<group>"; };
 		2C0B447F1CC5DE820000F081 /* SKBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBaseTableViewCell.m; sourceTree = "<group>"; };
+		2C5AFC7B1CC70E17006BBFEE /* Datasource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Datasource.json; sourceTree = "<group>"; };
 		2CAB05F31C56822400175074 /* Masonry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Masonry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAB060C1C56822400175074 /* Masonry.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Masonry.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7F8973C587BD920B9465B6 /* Pods_Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +105,7 @@
 				2C0B44761CC5DE820000F081 /* Utility */,
 				2C0B44791CC5DE820000F081 /* View */,
 				2C0B44671CC5DE820000F081 /* Info.plist */,
-				2C0B44661CC5DE820000F081 /* DataInfo.plist */,
+				2C5AFC7B1CC70E17006BBFEE /* Datasource.json */,
 				2C0B44681CC5DE820000F081 /* main.m */,
 				2C0B445D1CC5DE820000F081 /* LaunchScreen.storyboard */,
 				2C0B445F1CC5DE820000F081 /* Main.storyboard */,
@@ -304,9 +304,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5AFC7C1CC70E17006BBFEE /* Datasource.json in Resources */,
 				2C0B44831CC5DE820000F081 /* Main.storyboard in Resources */,
 				2C0B44811CC5DE820000F081 /* Assets.xcassets in Resources */,
-				2C0B44861CC5DE820000F081 /* DataInfo.plist in Resources */,
 				2C0B44871CC5DE820000F081 /* Info.plist in Resources */,
 				2C0B44821CC5DE820000F081 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -556,6 +556,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCBB08D42BDB778A3A4500B8 /* Pods-Masonry.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Masonry/Info.plist";
@@ -571,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24B53223559C341A6D46DC88 /* Pods-Masonry.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Masonry/Info.plist";
