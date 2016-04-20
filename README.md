@@ -1,12 +1,24 @@
 # MasonryCalculateCellHeight
 实现了masonry 来实现tableviewcell 高度自适应
 ###使用masonry来实现自适应cell动态高度。
-
+ 
 #本次更新说明
 
 1.本次更新新加了UITableview子类  使在vc里调用高度的方法更简单。
 
 2.新增了对tableview 的子视图 添加约束的方法
+ 
+先看效果图：  正常情况
+
+![](https://github.com/shaveKevin/MasonryCalculateCellHeight/blob/master/normal.gif)
+
+旋转后的效果：
+
+![](https://github.com/shaveKevin/MasonryCalculateCellHeight/blob/master/trunover.gif)
+
+ps: 我旋转屏幕的目的是为了测试一下自己写的约束到底对不对。
+如果横竖屏对布局没什么影响的话 那么基本适配就完成了。 
+不排除一些写死的高度在不同设备上出现问题。
 
 先讲一下使用masonry来自适应cell高度
 
