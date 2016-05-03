@@ -368,6 +368,18 @@ drawRect是对receiver的重绘，能获得context
 
 setNeedDisplay在receiver标上一个需要被重新绘图的标记，在下一个draw周期自动重绘，iphone device的刷新频率是60hz，也就是1/60秒后重绘
 ```
+####需要注意的是
+```
+setNeedsUpdateConstraints ： 当一个自定义的View某一个属性的改变可能影响到界面布局，我们应该调用这个方法来告诉布局系统在未来某个时刻需要更新。系统会调用updateConstraints去更新布局。
+
+updateConstraints ：自定义View时，我们应该重写这个方法来设置当前view局部的布局约束。重写这个方法时，一定要调用[super updateConstraints]。
+
+needsUpdateConstraints ：布局系统使用这个返回值来确定是否调用updateConstraints
+
+updateConstraintsIfNeeded ：我们可以调用这个方法触发update Constraints的操作。在needsUpdateConstraints返回YES时，才能成功触发update Constraints的操作。我们不应该重写这个方法。
+
+Auto Layout的布局过程是 update constraints(updateConstraints)-> layout Subviews(layoutSubViews)-> display(drawRect) 这三步不是单向的，如果layout的过程中改变了constrait, 就会触发update constraints，进行新的一轮迭代。我们在实际代码中，应该避免在此造成死循环。
+```
 
 个人博客  [www.shavekevin.com](http://shavekevin.com/)
 
