@@ -3,7 +3,7 @@
 ###使用masonry来实现自适应cell动态高度。
  
 #本次更新说明
-
+#version 1.0.0
 1.本次更新新加了UITableview子类  使在vc里调用高度的方法更简单。
 
 2.新增了对tableview 的子视图 添加约束的方法
@@ -116,6 +116,7 @@ cell.contentView.frame = cell.frame;
 
 ```
 #更新说明
+#version 1.0.1
  ##1.本次更新新加了UITableview子类 在子类里做的操作是
  
  ```
@@ -380,6 +381,17 @@ updateConstraintsIfNeeded ：我们可以调用这个方法触发update Constrai
 
 Auto Layout的布局过程是 update constraints(updateConstraints)-> layout Subviews(layoutSubViews)-> display(drawRect) 这三步不是单向的，如果layout的过程中改变了constrait, 就会触发update constraints，进行新的一轮迭代。我们在实际代码中，应该避免在此造成死循环。
 ```
+
+#本次更新说明
+#version 1.0.2
+
+更改之前解决因cell固定高度产生约束冲突的方法
+之前的方法是在初始化cell之前给cell一个一定的高度，这就像xib或者storyboard 里 创建cell的时候 给cell填充控件 系统给一个默认的高度是一样的。
+现在的方法是：更改cell自己添加控件的最后一个相对于cell底部的约束,更改约束的优先级为low。代码如下：
+```
+         make.bottom.equalTo(self.contentView.mas_bottom).offset(-5).priority(MASLayoutPriorityDefaultLow);
+```
+
 
 个人博客  [www.shavekevin.com](http://shavekevin.com/)
 
