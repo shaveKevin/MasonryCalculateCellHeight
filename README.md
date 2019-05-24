@@ -1,9 +1,9 @@
 # MasonryCalculateCellHeight
 实现了masonry 来实现tableviewcell 高度自适应
-###使用masonry来实现自适应cell动态高度。
+### 使用masonry来实现自适应cell动态高度。
  
-#本次更新说明
-#version 1.0.0
+# 本次更新说明
+# version 1.0.0
 1.本次更新新加了UITableview子类  使在vc里调用高度的方法更简单。
 
 2.新增了对tableview 的子视图 添加约束的方法
@@ -25,7 +25,7 @@ ps: 我旋转屏幕的目的是为了测试一下自己写的约束到底对不�
 首先，这里采用的是使用懒加载来加载控件。
 
 
-#例如：
+# 例如：
 ```
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -115,9 +115,9 @@ cell.contentView.frame = cell.frame;
 }
 
 ```
-#更新说明
-#version 1.0.1
- ##1.本次更新新加了UITableview子类 在子类里做的操作是
+# 更新说明
+# version 1.0.1
+ ## 1.本次更新新加了UITableview子类 在子类里做的操作是
  
  ```
  - (void)layOutViews {
@@ -160,7 +160,7 @@ cell.contentView.frame = cell.frame;
 }
 
  ```
- ##2. 新增了对tableview 的子视图 添加约束的方法
+ ## 2. 新增了对tableview 的子视图 添加约束的方法
  
  TableviewHeaderview不可以被加约束可是它的子视图可以加约束 这里给获取一个高度就好 添加footview   添加区头区尾 也是同样的方法
  ```
@@ -249,7 +249,7 @@ cell.contentView.frame = cell.frame;
 }
 
 ```
-####这样处理的目的是为了防止约束冲突。因为我们刚创建的时候cell的高度是默认的44.所以为了避免我们在添加子控件的时候由于两者高度不同造成的约束冲突。
+#### 这样处理的目的是为了防止约束冲突。因为我们刚创建的时候cell的高度是默认的44.所以为了避免我们在添加子控件的时候由于两者高度不同造成的约束冲突。
 
 
 ```
@@ -369,7 +369,7 @@ drawRect是对receiver的重绘，能获得context
 
 setNeedDisplay在receiver标上一个需要被重新绘图的标记，在下一个draw周期自动重绘，iphone device的刷新频率是60hz，也就是1/60秒后重绘
 ```
-####需要注意的是
+#### 需要注意的是
 ```
 setNeedsUpdateConstraints ： 当一个自定义的View某一个属性的改变可能影响到界面布局，我们应该调用这个方法来告诉布局系统在未来某个时刻需要更新。系统会调用updateConstraints去更新布局。
 
@@ -383,7 +383,7 @@ Auto Layout的布局过程是 update constraints(updateConstraints)-> layout Sub
 ```
 
 #本次更新说明
-#version 1.0.2
+# version 1.0.2
 
 更改之前解决因cell固定高度产生约束冲突的方法
 之前的方法是在初始化cell之前给cell一个一定的高度，这就像xib或者storyboard 里 创建cell的时候 给cell填充控件 系统给一个默认的高度是一样的。
@@ -391,6 +391,10 @@ Auto Layout的布局过程是 update constraints(updateConstraints)-> layout Sub
 ```
          make.bottom.equalTo(self.contentView.mas_bottom).offset(-5).priority(MASLayoutPriorityDefaultLow);
 ```
+# 写在最后
+
+如果需求页面元素固定，并且不需要频繁更新列表UI的时候无疑约束是最靠谱的，简单上手，并且效率高。例如：粉丝列表 特点：元素固定，不需要更新UI
+如果需求页面元素不固定的时候，强烈建议不使用因为你会发现性能给你这一块被玩的死死地。建议使用framne。。。。。。。例如：朋友圈feed流。 特点：元素较多且不固定。
 
 
 个人博客  [www.shavekevin.com](http://shavekevin.com/)
